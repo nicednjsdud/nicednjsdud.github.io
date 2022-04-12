@@ -1,3 +1,3 @@
 @echo on
-start /max http://localhost:4000/
+start /max http://localhost:4040/
 jekyll serve
