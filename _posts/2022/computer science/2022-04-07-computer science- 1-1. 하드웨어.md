@@ -1,3 +1,23 @@
+---
+title: CS50 1-1 하드웨어란?
+layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
+categories:
+- computer science
+description: 하드웨어란 무엇인가를 공부
+  
+article_tag1: CS50
+article_section: CS50
+meta_keywords: CS50,computer,cs,hardware
+last_modified_at: '2020-04-07 14:00:00 +0800'
+toc: true
+toc_sticky: true
+toc_label: 목차
+---
 하드 웨어
 =========
 
