@@ -9,7 +9,7 @@ related: true
 categories:
 - computer science
 description: 하드웨어란 무엇인가를 공부
-  
+tag : CS50
 article_tag1: CS50
 article_section: CS50
 meta_keywords: CS50,computer,cs,hardware
