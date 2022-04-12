@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nicednjsdud.github.io/
+Sitemap: https://nicednjsdud.github.io/sitemap.xml
