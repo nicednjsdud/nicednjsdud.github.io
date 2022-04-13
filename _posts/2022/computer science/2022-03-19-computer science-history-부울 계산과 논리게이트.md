@@ -19,7 +19,7 @@ toc_sticky: true
 toc_label: 목차
 ---
 
-[![관련 동영상](https://img.youtube.com/vi/O5nskjZ_GoI&list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo/0.jpg)](https://youtu.be/O5nskjZ_GoI?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo)
+[![관련 동영상](/assets/images/post/computer science/1.png)](https://youtu.be/O5nskjZ_GoI?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo)
 
 서론
 ====
