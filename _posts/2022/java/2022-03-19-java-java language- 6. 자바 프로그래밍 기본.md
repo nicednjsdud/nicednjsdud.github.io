@@ -1,5 +1,5 @@
 ---
-title: 2.Variable
+title: 3.Variable
 layout: single
 author_profile: true
 read_time: true
