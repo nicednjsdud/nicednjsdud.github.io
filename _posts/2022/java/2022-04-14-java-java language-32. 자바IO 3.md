@@ -1,5 +1,5 @@
 ---
-title: 자바 IO 3
+title: 자바 I/O 3
 layout: single
 author_profile: true
 read_time: true
@@ -207,7 +207,7 @@ public class BufferedStreamTest {
     - 1바이트의 값을 출력함
 ```
 
-* coid writeUTF (String str)
+* void writeUTF (String str)
 
 ```
     - UTF-8 인코딩 기반으로 문자열을 출력함
