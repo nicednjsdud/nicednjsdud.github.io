@@ -1,5 +1,5 @@
 ---
-title: 2.console IO
+title: Java 2.console IO
 layout: single
 author_profile: true
 read_time: true

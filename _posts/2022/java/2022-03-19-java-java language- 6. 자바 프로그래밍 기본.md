@@ -1,5 +1,5 @@
 ---
-title: 3.Variable
+title: Java 3.Variable
 layout: single
 author_profile: true
 read_time: true

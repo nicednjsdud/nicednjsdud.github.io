@@ -1,5 +1,5 @@
 ---
-title: 1.Introduce Java
+title: Java 1.Introduce Java
 layout: single
 author_profile: true
 read_time: true
