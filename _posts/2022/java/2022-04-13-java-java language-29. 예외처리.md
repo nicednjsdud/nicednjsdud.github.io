@@ -1,5 +1,5 @@
 ---
-title: 예외처리 (Exception)
+title: Java 26. 예외처리 (Exception)
 layout: single
 author_profile: true
 read_time: true

@@ -1,5 +1,5 @@
 ---
-title: 자바I/O 2
+title: Java 27. 자바I/O 2
 layout: single
 author_profile: true
 read_time: true

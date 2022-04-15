@@ -1,5 +1,5 @@
 ---
-title: 자바 I/O 3
+title: Java 29. 자바 I/O 3
 layout: single
 author_profile: true
 read_time: true

@@ -1,5 +1,5 @@
 ---
-title: 내부 클래스(Inner Class) 
+title: Java 25. 내부 클래스(Inner Class) 
 layout: single
 author_profile: true
 read_time: true
