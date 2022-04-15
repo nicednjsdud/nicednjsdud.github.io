@@ -1,5 +1,5 @@
 ---
-title: Java 10. 객체지향프로그래밍 2
+title: Java 11. 객체지향프로그래밍 2
 layout: single
 author_profile: true
 read_time: true
