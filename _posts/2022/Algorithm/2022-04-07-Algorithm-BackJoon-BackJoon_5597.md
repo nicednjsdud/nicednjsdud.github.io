@@ -36,7 +36,7 @@ BackJoon Algorithm - Java
 * 기본값(0)인사람의 번호를 출력 (배열은 0부터 시작하니 총 31공간의 배열 생성)
 
 ```java
-iimport java.util.Scanner;
+import java.util.Scanner;
 
 public class Back_5597 {
 
