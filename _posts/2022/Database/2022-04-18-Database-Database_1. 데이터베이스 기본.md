@@ -1,5 +1,5 @@
 ---
-title: 1. Database 
+title: 1.Database 
 layout: single
 author_profile: true
 read_time: true
