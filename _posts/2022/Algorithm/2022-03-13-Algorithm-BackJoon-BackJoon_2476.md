@@ -1,5 +1,5 @@
 ---
-title: BackJoon Algorithm 2484 주사위 게임
+title: BackJoon Algorithm 2476 주사위 게임
 layout: single
 author_profile: true
 read_time: true
