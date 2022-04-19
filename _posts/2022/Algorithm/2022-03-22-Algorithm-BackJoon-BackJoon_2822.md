@@ -1,5 +1,5 @@
 ---
-title: BackJoon Algorithm 2857 점수 계산
+title: BackJoon Algorithm 2822 점수 계산
 layout: single
 author_profile: true
 read_time: true

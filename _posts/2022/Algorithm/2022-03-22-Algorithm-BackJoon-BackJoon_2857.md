@@ -1,5 +1,5 @@
 ---
-title: BackJoon Algorithm 2857 블랙잭
+title: BackJoon Algorithm 2798 블랙잭
 layout: single
 author_profile: true
 read_time: true

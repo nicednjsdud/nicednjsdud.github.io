@@ -1,5 +1,5 @@
 ---
-title: BackJoon Algorithm 2857 오르막길
+title: BackJoon Algorithm 2846 오르막길
 layout: single
 author_profile: true
 read_time: true
