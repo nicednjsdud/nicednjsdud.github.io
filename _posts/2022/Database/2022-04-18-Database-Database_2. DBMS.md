@@ -1,5 +1,5 @@
 ---
-title: 2.DBMS 
+title: Database 2.DBMS 
 layout: single
 author_profile: true
 read_time: true

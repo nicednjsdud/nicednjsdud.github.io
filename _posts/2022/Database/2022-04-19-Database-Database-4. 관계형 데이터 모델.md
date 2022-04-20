@@ -1,3 +1,24 @@
+---
+title: Database 4. 관계형 데이터 모델 
+layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
+categories:
+- Database
+description: 관계형 데이터 모델
+tag : Database
+article_tag1: Algorithm
+article_section: Algorithm
+meta_keywords: Database, MySQL, Oracle
+last_modified_at: '2022-04-19 13:00:00 +0800'
+toc: true
+toc_sticky: true
+toc_label: 목차
+---
+
 관계형 데이터 모델
 ====================
 
