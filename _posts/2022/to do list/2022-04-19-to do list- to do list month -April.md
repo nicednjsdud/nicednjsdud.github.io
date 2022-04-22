@@ -1,3 +1,24 @@
+---
+title: To do list 
+layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
+categories:
+- to do list
+description: to do list
+tag : to do list
+article_tag1: CS50
+article_section: CS50
+meta_keywords: to do list, backend
+last_modified_at: '2022-04-19 14:00:00 +0800'
+toc: true
+toc_sticky: true
+toc_label: 목차
+---
+
 **개발자 선배님들께 자문을 구해 글을 계속 수정해 나갈 예정입니다**
 
 To do list 
