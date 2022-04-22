@@ -19,6 +19,8 @@ toc_sticky: true
 toc_label: 목차
 ---
 
+![alt](/assets/images/post/computer science/CS50/1/0.jpg)
+
 기억장치
 =======
 - 컴퓨터가 계산을 수행하기 위해서는 비트와 바이트의 형태로 기억장치에 저장할 수 있어야

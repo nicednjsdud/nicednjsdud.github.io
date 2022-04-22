@@ -18,6 +18,9 @@ toc: true
 toc_sticky: true
 toc_label: 목차
 ---
+
+![alt](/assets/images/post/computer science/CS50/1/0.jpg)
+
 하드 웨어
 =========
 
