@@ -260,3 +260,30 @@ WHERE 단가 > ALL(SELECT 단가 FROM 제품 WHERE 제조업체 = '대한식품'
 
 ![alt](/assets/images/post/Database/sql/23.png)
 
+## SQL 함수
+
+### DBMS가 제공하는 내장 함수(built-in function)
+
+#### 단일행 함수
+
+* 날짜, 시간 함수 
+
+
+##### TO_DATE(char , datetime)
+* 문자형(CHAR) 데이터를 DATE형으로 변환
+
+##### TO_CHAR(date , datetime)
+* DATE형 데이터를 문자열(VARCAHR2)로 변환
+* datetime의 주요인자
+
+```sql
+    - d     : 요일 순서 ( 1 ~ 7 , 월 = 1 )
+    - dd    : 1달 중 날짜 ( 1 ~ 31 )
+    - ddd   : 1년 중 날짜 ( 1 ~ 365 )
+    - mm    : 월 순서 ( 01 ~ 12 , January = 1 )
+    - momth : 월 이름 ( January ~ December )
+    - yyyy  : 4자리 연도  
+```
+
+#### 집계 함수
+#### 분석 함수
