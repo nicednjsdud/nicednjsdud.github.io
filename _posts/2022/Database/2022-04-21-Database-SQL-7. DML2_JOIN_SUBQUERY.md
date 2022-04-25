@@ -260,6 +260,29 @@ WHERE 단가 > ALL(SELECT 단가 FROM 제품 WHERE 제조업체 = '대한식품'
 
 ![alt](/assets/images/post/Database/sql/23.png)
 
+### 스칼라 서브 쿼리
+
+* select절 내에 사용하는 서브 쿼리.
+
+```sql
+-- 스칼라 서브쿼리 
+/*
+    각 제품의 가격을 구하면서 해당 제품이 위치하고 있는 제품 카테고리의 평균
+    가격도 같이 구하시오.
+    PRODUCT_NAME        list_price                   avg_list_price  
+*/
+
+select a.product_name, a.list_price, round(
+                                (select avg(k.list_price)
+                                 from products K
+                                where k.category_id = a.category_id
+                                    ),2) as AVG_List_Price
+from products A
+order by a.product_name
+```
+
+![alt](/assets/images/post/Database/sql/44.png)
+
 ## SQL 함수
 
 ### DBMS가 제공하는 내장 함수(built-in function)
