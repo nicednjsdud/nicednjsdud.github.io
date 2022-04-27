@@ -1,5 +1,5 @@
 ---
-title: CS50 11강 의사코드
+title: CS50 10강 알고리즘
 layout: single
 author_profile: true
 read_time: true
@@ -8,11 +8,11 @@ share: true
 related: true
 categories:
 - computer science
-description: 의사코드
+description: 알고리즘
 tag : CS50
 article_tag1: CS50
 article_section: CS50
-meta_keywords: CS50,computer,cs, 의사코드
+meta_keywords: CS50,computer,cs,알고리즘
 last_modified_at: '2022-04-26 14:00:00 +0800'
 toc: true
 toc_sticky: true
@@ -40,7 +40,7 @@ toc_label: 목차
     예) 전화번호부에서 Mike Smith를 찾는 일을 한다고 합시다. 밑에 그림의 알고
     리즘을 살펴보면, 전화번호부를 집어 들고 첫페이지를 펼친 후 Mike Smith가  
     그페이지에 있는지 찾습니다. 없으면 그다음 페이지로 갑니다. Mike Smith를
-    찾을 때까지 혹은 전화번호부가 끝날 때까지 이것을 반복한다.
+     찾을 때까지 혹은 전화번호부가 끝날 때까지 이것을 반복한다.
 ```
 
 ![alt](/assets/images/post/computer science/CS50/1/12.png)
