@@ -1,5 +1,5 @@
 ---
-title: Database 11. 데이터모델링2
+title: Database 11. 데이터모델링 - 관계
 layout: single
 author_profile: true
 read_time: true
