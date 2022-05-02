@@ -7,7 +7,7 @@ comments: true
 share: true
 related: true
 categories:
-- java
+- Java
 description: What is 객체지향프로그래밍?
 tag : java language
 article_tag1: java

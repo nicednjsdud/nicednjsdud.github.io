@@ -1,7 +1,7 @@
 ---
 title: "Git"
 layout: category-new
-category: git
+category: Git
 permalink: /category/git/
 author_profile: true
 ---

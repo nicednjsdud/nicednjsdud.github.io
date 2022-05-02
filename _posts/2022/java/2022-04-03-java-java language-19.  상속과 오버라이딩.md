@@ -7,7 +7,7 @@ comments: true
 share: true
 related: true
 categories:
-- java
+- Java
 description: What is collection Inheritance and overriding?
 tag : java language
 article_tag1: java

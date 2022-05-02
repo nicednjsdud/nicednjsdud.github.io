@@ -6,9 +6,9 @@ read_time: true
 comments: true
 share: true
 related: true
-category: java
+category: Java
 categories: 
-- java
+- Java
 description: What is Java
 tag : java language
 article_tag1: java

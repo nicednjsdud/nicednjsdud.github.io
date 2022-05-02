@@ -7,7 +7,7 @@ comments: true
 share: true
 related: true
 categories:
-- java
+- Java
 description: What is 반복문?
 tag : java language
 article_tag1: java

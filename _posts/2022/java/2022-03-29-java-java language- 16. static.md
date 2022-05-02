@@ -7,7 +7,7 @@ comments: true
 share: true
 related: true
 categories:
-- java
+- Java
 description: What is static?
 tag : java language
 article_tag1: java
