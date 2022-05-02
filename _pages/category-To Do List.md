@@ -1,7 +1,7 @@
 ---
-title: "To Do List"
-layout: single
-categories: To Do List
-permalink: /category/To Do List/
+title: "To do list"
+layout: category-new
+category: to do list
+permalink: /category/to do list/
 author_profile: true
 ---

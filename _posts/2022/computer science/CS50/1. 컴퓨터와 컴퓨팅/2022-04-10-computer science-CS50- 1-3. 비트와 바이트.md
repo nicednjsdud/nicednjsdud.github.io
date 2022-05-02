@@ -7,7 +7,7 @@ comments: true
 share: true
 related: true
 categories:
-- computer science
+- Computer Science
 description: 비트와 바이트
 tag : CS50
 article_tag1: CS50

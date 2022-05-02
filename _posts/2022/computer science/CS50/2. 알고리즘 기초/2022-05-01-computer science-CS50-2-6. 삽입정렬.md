@@ -7,7 +7,7 @@ comments: true
 share: true
 related: true
 categories:
-- computer science
+- Computer Science
 description: 삽입 정렬
 tag : CS50
 article_tag1: CS50

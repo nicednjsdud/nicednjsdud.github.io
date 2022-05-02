@@ -20,6 +20,22 @@
       {% include nav_list nav=page.sidebar.nav %}
     {% endif %}
   {% endif %}
-
+    <!-- sidebar.html -->
+  <div>
+    <div class="sidebar-nav-item"><strong>Category</strong></div>
+    <nav class="content-ul">
+      {% for category in site.categories %}
+      <!-- <a href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}" -->
+        <a href="/category/{{category | first }}/"
+         class="sidebar-nav-item pl-3rem">
+                            <span class="name">
+                                {{ category | first }}
+                            </span>
+        <span class="badge">({{ category | last | size }})</span>
+      </a>
+      <br>
+      {% endfor %}
+    </nav>
   </div>
+  </div> 
 {% endif %}

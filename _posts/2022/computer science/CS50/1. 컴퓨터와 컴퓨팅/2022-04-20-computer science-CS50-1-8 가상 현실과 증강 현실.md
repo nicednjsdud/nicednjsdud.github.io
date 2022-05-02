@@ -7,7 +7,7 @@ comments: true
 share: true
 related: true
 categories:
-- computer science
+- Computer Science
 description: 증강현실과 가상현실
 tag : CS50
 article_tag1: CS50

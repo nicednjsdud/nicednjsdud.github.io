@@ -254,6 +254,9 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+category2_archive:
+  type: liquid
+  path: /post/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
@@ -292,7 +295,7 @@ defaults:
   
   # _pages
   - scope:
-      path: "_pages"
+      path: ""
       type: pages
     values:
       layout: single
