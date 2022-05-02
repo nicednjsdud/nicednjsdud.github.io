@@ -26,7 +26,7 @@ BackJoon Algorithm - Java
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/10872.png)
+![alt](./assets/images/post/Algorithm/10872.png)
 
 
 
