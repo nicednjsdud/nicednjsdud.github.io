@@ -7,7 +7,7 @@ comments: true
 share: true
 related: true
 categories:
-- computer science
+- Computer Science
 description: 웹의 동작 방식
 tag : Internet
 article_tag1: Internet
