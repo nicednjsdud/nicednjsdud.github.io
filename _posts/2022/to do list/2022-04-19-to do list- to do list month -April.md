@@ -7,9 +7,9 @@ comments: true
 share: true
 related: true
 categories:
-- to do list
+- To do list
 description: to do list
-tag : to do list
+tag : To do list
 article_tag1: CS50
 article_section: CS50
 meta_keywords: to do list, backend
