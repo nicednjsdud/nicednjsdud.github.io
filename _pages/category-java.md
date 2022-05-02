@@ -2,6 +2,6 @@
 title: "Java"
 layout: category-new
 category: Java
-permalink: /category/java/
+permalink: /category/Java/
 author_profile: true
 ---

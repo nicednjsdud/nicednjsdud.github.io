@@ -1,7 +1,7 @@
 ---
 title: "HTML"
 layout: category-new
-category: html
-permalink: /category/html/
+category: HTML
+permalink: /category/HTML/
 author_profile: true
 ---
