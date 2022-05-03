@@ -22,11 +22,11 @@ toc_label: 목차
 BackJoon Algorithm - Java
 ====================
 
-![alt](https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png)
+![alt](https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.PNG)
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/1731.png)
+![alt](/assets/images/post/Algorithm/1731.PNG)
 
 
 
