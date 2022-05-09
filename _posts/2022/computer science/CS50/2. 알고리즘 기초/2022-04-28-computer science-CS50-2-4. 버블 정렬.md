@@ -1,5 +1,5 @@
 ---
-title: CS50 13강 버블 정렬
+title: CS50 2-4강 버블 정렬
 layout: single
 author_profile: true
 read_time: true

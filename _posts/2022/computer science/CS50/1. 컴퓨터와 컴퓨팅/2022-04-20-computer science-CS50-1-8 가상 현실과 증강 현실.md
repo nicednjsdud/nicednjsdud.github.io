@@ -1,5 +1,5 @@
 ---
-title: CS50 8강 증강현실과 가상현실
+title: CS50 1-8강 증강현실과 가상현실
 layout: single
 author_profile: true
 read_time: true

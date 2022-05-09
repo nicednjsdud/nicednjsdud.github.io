@@ -1,5 +1,5 @@
 ---
-title: CS50 3강 비트와 바이트
+title: CS50 1-3강 비트와 바이트
 layout: single
 author_profile: true
 read_time: true

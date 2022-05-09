@@ -1,5 +1,5 @@
 ---
-title: CS50 7강 image
+title: CS50 1-7강 image
 layout: single
 author_profile: true
 read_time: true

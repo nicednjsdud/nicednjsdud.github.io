@@ -1,5 +1,5 @@
 ---
-title: CS50 14강 선택 정렬
+title: CS50 2-5강 선택 정렬
 layout: single
 author_profile: true
 read_time: true

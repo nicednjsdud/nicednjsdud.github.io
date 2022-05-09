@@ -1,5 +1,5 @@
 ---
-title: CS50 2강 기억장치
+title: CS50 1-2강 기억장치
 layout: single
 author_profile: true
 read_time: true

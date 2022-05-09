@@ -1,5 +1,5 @@
 ---
-title: CS50 5강 ASCII
+title: CS50 1-5강 ASCII
 layout: single
 author_profile: true
 read_time: true

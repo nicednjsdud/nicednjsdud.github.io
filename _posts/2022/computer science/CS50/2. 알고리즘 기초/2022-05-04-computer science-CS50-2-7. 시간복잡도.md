@@ -1,5 +1,5 @@
 ---
-title: CS50 16강 시간 복잡도
+title: CS50 2-7강 시간 복잡도
 layout: single
 author_profile: true
 read_time: true

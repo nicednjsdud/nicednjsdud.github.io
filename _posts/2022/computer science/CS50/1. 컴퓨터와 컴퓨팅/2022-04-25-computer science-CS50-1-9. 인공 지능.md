@@ -1,5 +1,5 @@
 ---
-title: CS50 9강 인공 지능
+title: CS50 1-9강 인공 지능
 layout: single
 author_profile: true
 read_time: true

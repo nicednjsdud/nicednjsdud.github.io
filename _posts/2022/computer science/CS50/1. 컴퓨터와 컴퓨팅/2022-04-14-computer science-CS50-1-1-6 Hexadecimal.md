@@ -1,5 +1,5 @@
 ---
-title: CS50 6강 Hexadecimal
+title: CS50 1-6강 Hexadecimal
 layout: single
 author_profile: true
 read_time: true

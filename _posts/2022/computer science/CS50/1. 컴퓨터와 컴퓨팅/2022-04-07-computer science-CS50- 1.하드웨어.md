@@ -1,5 +1,5 @@
 ---
-title: CS50 1강 하드웨어란?
+title: CS50 1-1강 하드웨어란?
 layout: single
 author_profile: true
 read_time: true

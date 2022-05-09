@@ -1,5 +1,5 @@
 ---
-title: CS50 12강 선형 탐색
+title: CS50 2-3강 선형 탐색
 layout: single
 author_profile: true
 read_time: true

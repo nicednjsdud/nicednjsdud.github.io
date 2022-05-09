@@ -1,5 +1,5 @@
 ---
-title: CS50 15강 삽입 정렬
+title: CS50 2-6강 삽입 정렬
 layout: single
 author_profile: true
 read_time: true

@@ -1,5 +1,5 @@
 ---
-title: CS50 4강 2진수
+title: CS50 1-4강 2진수
 layout: single
 author_profile: true
 read_time: true

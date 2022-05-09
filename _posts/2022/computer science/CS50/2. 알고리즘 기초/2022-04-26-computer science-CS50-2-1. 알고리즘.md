@@ -1,5 +1,5 @@
 ---
-title: CS50 10강 알고리즘
+title: CS50 2-1강 알고리즘
 layout: single
 author_profile: true
 read_time: true

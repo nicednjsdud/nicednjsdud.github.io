@@ -1,5 +1,5 @@
 ---
-title: CS50 11강 의사코드
+title: CS50 2-2강 의사코드
 layout: single
 author_profile: true
 read_time: true
