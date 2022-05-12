@@ -72,3 +72,5 @@ Database System Language
   - GRANT : 데이터베이스 객체에 권한을 부여
   - REVOKE : 이미 부여된 데이터베이스 객체 권한을 취소한다.
 ```
+
+#### 4. TCL (TRANSACTION CONTROL LANGUAGE)
