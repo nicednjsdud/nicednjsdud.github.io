@@ -308,5 +308,23 @@ order by a.product_name
     - yyyy  : 4자리 연도  
 ```
 
+##### 문자 함수 (문자 변환)
+
+* REPLACE(s1, s2, s3)
+
+```
+    - 대상 문자열(s1)의 지정된 문자(s2)를 원하는 문자(3)로 변경
+```
+
+```sql
+    -- 공백이 들어간 것을 알수 있음.
+SELECT REPLACE(CHAR_COMPARE_4,' ','_') AS CHAR_COMPARE_4 
+		, REPLACE(CHAR_COMPARE_6,' ','_') AS CHAR_COMPARE_6 
+FROM EZEN.CHAR_COMPARE cc ;
+
+```
+
+![alt](/assets/images/post/Database/sql/90.png)
+
 #### 집계 함수
 #### 분석 함수
