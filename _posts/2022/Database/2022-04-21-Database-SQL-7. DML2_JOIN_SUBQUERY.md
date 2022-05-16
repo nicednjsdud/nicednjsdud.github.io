@@ -289,8 +289,34 @@ order by a.product_name
 
 #### 단일행 함수
 
-* 날짜, 시간 함수 
+##### 특징
 
+* SELECT, WHERE, ORDER BY 절에 사용 가능함.
+* 각 행(ROW)들에 대해 개별적으로 작용함.
+    * 각각의 행에 대한 조작 결과를 리턴함.
+* 단 하나의 결과만 리턴함.
+* 함수의 중첩이 가능함.
+
+#### 문자 형 함수
+
+* 문자를 입력하면 문자나 숫자값을 반환함.
+* LOWER, UPPER, SUBSTR, LENGTH, TRIM..
+
+```SQL
+-- 단일행 문자형 함수
+
+SELECT LOWER('Oracle Server, SQL Develper') AS "LOWER('소문자로 변환')",
+	   UPPER('Oracle Server, SQL Develper') AS "UPPER('대문자로 변환')",
+	   ASCII('A') AS "ASCII('아스키코드값 출력')",
+	   CONCAT('SQL','Develper') AS "CONCAT('문자열 결합')",
+	   SUBSTR('SQL Develper',1,3) AS "SUBSTR('문자열 잘라내기')" 
+FROM DUAL;
+```
+
+![alt](/assets/images/post/Database/sql/98.png)
+
+#### 날짜, 시간 함수 
+#### 변환 형 함수
 
 ##### TO_DATE(char , datetime)
 * 문자형(CHAR) 데이터를 DATE형으로 변환
@@ -307,6 +333,25 @@ order by a.product_name
     - momth : 월 이름 ( January ~ December )
     - yyyy  : 4자리 연도  
 ```
+##### 숫자 함수
+* 숫자를 입력하면 숫자값을 반환함.
+* ABS (숫자) : 절대값
+* ROUND (숫자, m) : m 자리를 기준으로 숫자 반올림
+
+```SQL
+SELECT ABS(-15) AS "ABS('절대값을 반환')",
+	   SIGN(10) AS "SIGN('양수일 경우 1 음수일 경우 -1, 0일 경우 0 반환')",
+	   MOD(8,3) AS "MOD('나머지 반환')",
+	   CEIL(38.678) AS "CEIL('무조건 올림')",
+	   FLOOR(38.678) AS "FLOOR('무조건 버림')",
+	   ROUND(38.678,2) AS "ROUND('소수점 2번째 자리까지 반올림')",
+	   TRUNC(38.678) AS "TRUNC('0의 자리에서 무조건 자름')",
+	   TRUNC(38.678,1) AS "TRUNC('1의 자리에서 무조건 자름')"
+FROM DUAL;
+```
+
+![alt](/assets/images/post/Database/sql/100.png)
+![alt](/assets/images/post/Database/sql/101.png)
 
 ##### 문자 함수 (문자 변환)
 
@@ -325,6 +370,11 @@ FROM EZEN.CHAR_COMPARE cc ;
 ```
 
 ![alt](/assets/images/post/Database/sql/90.png)
+
+##### NULL 관련 함수
+
+* NULL을 처리하기 위한 함수
+* NVL, NULLIF, COALESCE
 
 #### 집계 함수
 #### 분석 함수
