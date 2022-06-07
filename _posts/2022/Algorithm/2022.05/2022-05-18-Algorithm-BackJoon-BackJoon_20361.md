@@ -32,7 +32,6 @@ BackJoon Algorithm - Java
 ## 풀이
 
 ```java
-
 import java.io.BufferedReader;
 import java.io.IOException;
 
@@ -68,3 +67,5 @@ public class Back_20361 {
     }
 }
 ```
+
+
