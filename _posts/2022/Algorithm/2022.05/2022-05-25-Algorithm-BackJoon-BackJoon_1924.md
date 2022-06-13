@@ -1,4 +1,5 @@
 ---
+published: true
 title: BackJoon Algorithm 1924 2007년 (Java)
 layout: single
 author_profile: true

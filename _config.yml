@@ -1,5 +1,4 @@
 # 기본 설명 https://mmistakes.github.io/minimal-mistakes/docs/configuration/
-published: true
 minimal_mistakes_skin    : "aqua" # 태마 색 설정 "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise" 
 
 # Site Settings
