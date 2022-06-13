@@ -1,4 +1,5 @@
 ---
+published: true
 title: BackJoon Algorithm 10991 별찍기-16 (Java)
 layout: single
 author_profile: true

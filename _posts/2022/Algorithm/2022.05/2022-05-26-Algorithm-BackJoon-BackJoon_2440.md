@@ -1,4 +1,5 @@
 ---
+published: true
 title: BackJoon Algorithm 2440 별찍기-3 (Java)
 layout: single
 author_profile: true

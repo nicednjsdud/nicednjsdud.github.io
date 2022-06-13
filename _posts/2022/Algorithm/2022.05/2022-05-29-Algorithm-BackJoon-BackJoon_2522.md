@@ -1,4 +1,5 @@
 ---
+published: true
 title: BackJoon Algorithm 2522 별찍기-12 (Java)
 layout: single
 author_profile: true
