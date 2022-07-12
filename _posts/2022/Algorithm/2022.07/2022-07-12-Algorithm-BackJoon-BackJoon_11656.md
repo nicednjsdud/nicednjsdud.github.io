@@ -30,8 +30,6 @@ toc_label: 목차
 
 ## 풀이
 
-- 아스키 코드 숫자를 이용해 문제를 푼다.
-
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
