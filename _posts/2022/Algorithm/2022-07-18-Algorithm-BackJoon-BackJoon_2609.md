@@ -48,7 +48,7 @@ public class Back_2609 {
             return GCD(num2,num1%num2);
         }
     }
-    // 최소 공약수 구하기
+    // 최소 공배수 구하기
     public static int LCM(int num1,int num2){
         return num1 * num2 / GCD(num1,num2);
     }
