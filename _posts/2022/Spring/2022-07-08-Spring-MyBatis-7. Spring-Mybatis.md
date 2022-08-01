@@ -8,7 +8,7 @@ related: true
 categories:
   - Spring
 description: MyBatis XML 연동
-tag: Spring Basic
+tag: MyBatis
 article_tag1: Spring Web
 article_section: Spring Web
 meta_keywords: Spring, backend ,framework
