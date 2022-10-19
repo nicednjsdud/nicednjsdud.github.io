@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 2775 부녀회장이 될테야 (Java)
+title: BackJoon Algorithm 10757 큰 수 A+B (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -9,12 +9,12 @@ share: true
 related: true
 categories:
   - Algorithm
-description: 부녀회장이 될테야
+description: 큰 수 A+B
 tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2022-10-18 13:00:00 +0800"
+last_modified_at: "2022-10-19 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/2775.png)
+![alt](/assets/images/post/Algorithm/10757.png)
 
 ## 풀이
 
@@ -34,41 +34,24 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
+import java.util.StringTokenizer;
 
-public class Back_2775 {
+public class Back_10757 {
     public static void main(String[] args) throws IOException {
 
         // given
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int test_count = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        BigInteger A = new BigInteger(st.nextToken());
+        BigInteger B = new BigInteger(st.nextToken());
+
+        A = A.add(B);
         // when
-        for (int i = 0; i < test_count; i++) {
-            int floor = Integer.parseInt(br.readLine());
-            int room = Integer.parseInt(br.readLine());
-            int count = 0;
-            int apt[][] = new int[floor + 1][room + 2];
-            int people_count = 1;
-            // 0층 담아주기
-            for (int k = 1; k <= room; k++) {
-                apt[0][k] = people_count;
-                people_count++;
-            }
-            if (floor != 0) {
-                for (int j = 1; j <= floor; j++) {
-                    people_count = 1;
-                    for (int k = 1; k <= room; k++) {
-                        apt[j][k] = people_count;
-                        people_count = apt[j - 1][k + 1] + people_count;
-                    }
-                }
-            }
-            System.out.println(apt[floor][room]);
-        }
+        System.out.println(A);
+
         // then
-        br.close();
     }
 }
-
-
 
 ```
