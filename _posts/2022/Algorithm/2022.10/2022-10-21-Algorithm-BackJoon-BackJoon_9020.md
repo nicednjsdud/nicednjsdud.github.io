@@ -69,7 +69,7 @@ public class Back_9020 {
 
                     int prime_count = num - j;
 
-                    // 뺀수도 정수일때 가장 근접한 수가 차가 가장적다.
+                    // 뺀수가 소수일때 가장 근접한 수가 차가 가장적다.
                     if( prime[prime_count] == false){
                         int first_count = prime_count;
                         int last_count = j;
