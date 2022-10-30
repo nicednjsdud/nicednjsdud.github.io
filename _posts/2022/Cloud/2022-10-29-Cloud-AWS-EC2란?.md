@@ -7,7 +7,7 @@ comments: true
 share: true
 related: true
 categories:
-  - AWS
+  - Cloud
 description: EC2란?
 tag: Cloud
 article_tag1: Cloud
