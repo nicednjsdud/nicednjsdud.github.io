@@ -25,13 +25,9 @@ toc_label: 목차
 
 - If you want to build a house..
 
-![alt](/assets/images/post/software/1.png)
-
 ## 2. Data Structures
 
 - 데이터를 효율적으로 사용할 수 있도록 컴퓨터에 저장하는 방법.
-
-![alt](/assets/images/post/software/2.png)
 
 ### 1) Data type
 
@@ -48,8 +44,6 @@ toc_label: 목차
 ## 3. Algorithms
 
 - 계산 및 데이터 처리에 자주 사용되는 일련의 유한 명령
-
-![alt](/assets/images/post/software/3.png)
 
 ## 4. "알고리즘 설계 및 분석" 공부하는 이유
 
@@ -77,11 +71,7 @@ toc_label: 목차
 
 - 용어/리터럴의 재검토
 
-![alt](/assets/images/post/software/4.png)
-
 #### Place & Routing
-
-![alt](/assets/images/post/software/5.png)
 
 ## 6. Programming
 
