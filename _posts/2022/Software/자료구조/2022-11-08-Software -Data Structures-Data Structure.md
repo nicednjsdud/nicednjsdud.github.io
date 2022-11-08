@@ -13,7 +13,7 @@ tag: Data Structures
 article_tag1: Data Structures
 article_section: Data Structures
 meta_keywords: Data Structures, Computer, Software
-last_modified_at: "2022-11-08 12:00:00 +0800"
+last_modified_at: "2022-11-08 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
