@@ -29,7 +29,7 @@ toc_label: 목차
 
 ## 2. Data Structures
 
-- 데이터를 효율적으로 사용할 수 있도록 컴퓨터에 저장하는 방법
+- 데이터를 효율적으로 사용할 수 있도록 컴퓨터에 저장하는 방법.
 
 ![alt](/assets/images/post/software/2.png)
 
