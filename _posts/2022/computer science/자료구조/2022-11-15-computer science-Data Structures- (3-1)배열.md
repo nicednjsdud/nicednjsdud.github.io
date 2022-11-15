@@ -9,7 +9,7 @@ related: true
 categories:
   - Computer Science
 description: 배열
-tag: Data Structures
+tag: Internet
 article_tag1: Internet
 article_section: Internet
 meta_keywords: CS50,computer,cs,시스템 프로그래밍
@@ -85,6 +85,8 @@ toc_label: 목차
 ```
   자료형 배열이름[배열크기] = {초기값 리스트};
 ```
+
+.
 
 #### (1) 초기화 형식의 의미
 

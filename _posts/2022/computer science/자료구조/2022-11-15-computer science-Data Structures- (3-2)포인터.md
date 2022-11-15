@@ -9,7 +9,7 @@ related: true
 categories:
   - Computer Science
 description: 배열
-tag: Data Structures
+tag: Internet
 article_tag1: Internet
 article_section: Internet
 meta_keywords: CS50,computer,cs,시스템 프로그래밍
@@ -20,6 +20,8 @@ toc_label: 목차
 ---
 
 # 자료 구조 - 포인터
+
+.
 
 ## 1. 포인터
 
