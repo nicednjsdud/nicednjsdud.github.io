@@ -9,7 +9,7 @@ related: true
 categories:
   - Computer Science
 description: 구조체와 재귀 호출
-tag: Data Structures
+tag: Internet
 article_tag1: Internet
 article_section: Internet
 meta_keywords: CS50,computer,cs,자료구조
