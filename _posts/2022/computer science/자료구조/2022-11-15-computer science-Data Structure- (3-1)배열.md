@@ -154,7 +154,7 @@ toc_label: 목차
 - \0 는 문자의 끝.
 
 ```c
-  char s1[10] = "String"
+  char s1[10] = "String";
 ```
 
 ![alt](/assets/images/post/ComputerStudy/37.png)
@@ -162,7 +162,7 @@ toc_label: 목차
 ##### 2. 초기값 문자리스트를 사용한 초기화
 
 ```c
-  char s2[10] = {'S','t','r','i','n','g'}
+  char s2[10] = {'S','t','r','i','n','g'};
 ```
 
 ![alt](/assets/images/post/ComputerStudy/38.png)
