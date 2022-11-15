@@ -251,7 +251,7 @@ toc_label: 목차
 #### (2) 1차원 포인터 배열
 
 ```c
-  char *ptr[3] = {{"Dreams"},{"come"},{"true!"}};
+  char *ptr[3] = {% raw %}{{"Dreams"},{"come"},{"true!"}}{% endraw %};
 ```
 
 ![alt](/assets/images/post/ComputerStudy/53.png)
