@@ -9,7 +9,7 @@ related: true
 categories:
   - Computer Science
 description: 배열
-tag: Internet
+tag: Data Structures
 article_tag1: Internet
 article_section: Internet
 meta_keywords: CS50,computer,cs,시스템 프로그래밍
