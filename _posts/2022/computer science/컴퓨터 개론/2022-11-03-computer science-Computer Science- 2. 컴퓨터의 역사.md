@@ -1,5 +1,5 @@
 ---
-title: (컴퓨터 개론) 2. 컴퓨터의 역사
+title: (컴퓨터 개론) 1-2 컴퓨터의 역사
 layout: single
 author_profile: true
 read_time: true

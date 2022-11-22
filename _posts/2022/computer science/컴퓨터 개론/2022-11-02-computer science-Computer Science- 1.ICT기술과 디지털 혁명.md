@@ -1,5 +1,5 @@
 ---
-title: (컴퓨터 개론) 1. ICT 기술과 디지털 혁명
+title: (컴퓨터 개론) 1-1 ICT 기술과 디지털 혁명
 layout: single
 author_profile: true
 read_time: true
