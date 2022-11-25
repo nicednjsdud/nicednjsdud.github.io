@@ -105,10 +105,13 @@ toc_label: 목차
 #### (1) NOR 함수 : F = (A+B)'
 
 - (A+B = OR)
-- 그뒤에 NOT을 붙임
+- 그뒤에 NOT을 붙임 (인버터)
 
 ![alt](/assets/images/post/ComputerStudy/165.png)
 
 #### (2) NAND 함수 : F = (AB)'
+
+- (AB = AND)
+- 그뒤에 NOT을 붙임 (인버터)
 
 ![alt](/assets/images/post/ComputerStudy/166.png)
