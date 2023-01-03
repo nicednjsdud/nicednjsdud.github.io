@@ -74,7 +74,7 @@ toc_label: 목차
 
 ```
 예) F(w,x,y,z) = ∏(3,4,5,6,7,12,13)
-   d(w,x,y,z) = ∏(8,10,11,14,15)
+   d(w,x,y,z) =  ∏(8,10,11,14,15)
 ```
 
 ![alt](/assets/images/post/ComputerStudy/543.png)
@@ -95,7 +95,7 @@ toc_label: 목차
 
 ```
    Don’t care 조건을 사용 않는 경우  F = (x+y+z)(x+y'+z')(x'+y+z')(x'+y'+z)
-   Don’t care 조건을 사용 하는 경우  F = x'(y'+z')
+   Don’t care 조건을 사용 하는 경우  F = y'(x'+z')(w+z)
 ```
 
 #### (4) 예
@@ -108,6 +108,6 @@ toc_label: 목차
 ![alt](/assets/images/post/ComputerStudy/545.png)
 
 ```
-   Don’t care 조건을 사용 않는 경우  간략화 X
-   Don’t care 조건을 사용 하는 경우  F = y'(x'+z')(w+z)
+   Don’t care 조건을 사용 않는 경우  F = (B'+C'+D)(B+C+D)(A'+B'+C+D')
+   Don’t care 조건을 사용 하는 경우  F = (A'+C+D')(C'+D)(B+D)
 ```
