@@ -135,3 +135,27 @@ void deleteNode(treeNode *root, element key)
       free(p);
 }
 ```
+
+## 3. 연결 자료구조를 이용한 이진 탐색 프로그램 작성 (탐색)
+
+```c
+      treeNode* searchBST(treeNode* root, char x)
+      {     // 이진 탐색 트리에서 키값이 x인 노드의 위치를 탐색하는 연산
+            treeNode* p;
+            p = root;
+            while(p != null){
+                  if(x < p->key) p = p->left;
+                  else if (x == p->key) return p;
+                  else p = p->right;
+            }
+            printf("\n 찾는 키가 없습니다.");
+            return p;
+      }
+      void displayInorder(treeNode* root)
+      {     // 이진 탐색 트리에서 중위 순회 화면서 출력하는 연산
+            if(root){
+                  displayInorder(root -> left);
+                  displayInorder(root -> right);
+            }
+      }
+```
