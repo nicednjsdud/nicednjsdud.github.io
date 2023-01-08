@@ -98,11 +98,20 @@ toc_label: 목차
   int mkfifo(const chat *pathname, mode_t mode);
 ```
 
-##### (2-4) const char \*pathname
+##### (2-4)`const char *pathname`
 
 - fifo 파일이 생성될 경로를 지정함
 - 일반 파일의 경로를 지정하는 것과 동일
 
-##### (2-5) mode_t mode
+##### (2-5) `mode_t mode`
 
 - 생성 될 fifo 파일의 접근 권한을 지정함
+
+## 2. 이름 있는 파이프 관련 함수
+
+### 1) FIFO로 데이터 주고받기
+
+* FIFO 파일을 생성하면 저수준 파일 입출력 함수로 파일을 읽거나 쓸 수 있음
+
+![alt](/assets/images/post/ComputerStudy/577.png)
+

@@ -138,3 +138,10 @@ toc_label: 목차
 ##### (3-3) 통신방향 결정 (파이프는 기본적으로 단방향)
 
 ![alt](/assets/images/post/ComputerStudy/575.png)
+
+### 4) FIFO
+
+* 양방향 파이프의 활용
+* 파이프는 기본적으로 단방향이므로 양방향 통신을 위해서는 파이프를 2개 생성함
+
+![alt](/assets/images/post/ComputerStudy/576.png)
