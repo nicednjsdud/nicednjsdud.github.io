@@ -125,3 +125,9 @@ toc_label: 목차
 - 현재 삽입한 간선의 수 : 5개
 
 ![alt](/assets/images/post/ComputerStudy/674.png)
+
+#### (7) 나머지 간선 중에서 나머지 가중치가 가장 작은 간선 (D,E) 삽입
+
+- 현재 삽입한 간선의 수 : 6개
+
+![alt](/assets/images/post/ComputerStudy/675.png)
