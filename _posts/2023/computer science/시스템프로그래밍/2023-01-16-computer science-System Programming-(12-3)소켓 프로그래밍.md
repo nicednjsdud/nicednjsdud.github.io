@@ -14,7 +14,7 @@ tag: Internet
 article_tag1: Internet
 article_section: Internet
 meta_keywords: CS50,computer,cs,시스템 프로그래밍
-last_modified_at: "2023-01-16 14:00:00 +0800"
+last_modified_at: "2023-01-17 14:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -181,3 +181,19 @@ toc_label: 목차
 - flags: 데이터를 주고받는 방법을 지정한 플래그
 - to : 메세지를 받을 호스트의 주소
 - tolen : to의 크기
+
+#### (10) UDP 데이터 받기 : recvfrom(3)
+
+```c
+  #include <sys/types.h>
+  #include <sys/socket.h>
+
+  ssize_t recvfrom(int s, void *buf, size_t len, int flags,
+                  struct sockaddr *from,int *fromlen);
+```
+
+- flags: 데이터를 주고받는 방법을 지정한 플래그
+- from : 메세지를 보내는 호스트의 주소
+- fromlen : from의 크기
+
+![alt](/assets/images/post/ComputerStudy/707.png)
