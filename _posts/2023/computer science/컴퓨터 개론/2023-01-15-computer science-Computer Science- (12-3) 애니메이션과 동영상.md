@@ -197,3 +197,15 @@ toc_label: 목차
 
 - 현실세계 이미지와 컴퓨터가 생성한 가상 이미지를 머지 및 합성
 - Paul Milgram과 Fumio Kishino(1994년)가, 현실세계와 가상 세계를 연결시켜 놓은 가상화 연속성 개념 제시
+
+#### (2) 증강 현실 
+
+* AR : Augmented Reality
+* **현실**에 기반한 가상화
+
+#### (3) 증강 가상
+
+* AV : Augmented Virtuality
+* **가상**세계를 기반으로 그 위에 현실세계 정보를 추가하는 기술
+
+![alt](/assets/images/post/ComputerStudy/702.png)

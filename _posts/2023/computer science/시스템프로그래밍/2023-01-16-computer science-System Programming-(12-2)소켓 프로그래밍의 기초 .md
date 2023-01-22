@@ -139,6 +139,7 @@ toc_label: 목차
   #include <sys/socket.h>
   #include <netinet/in.h>
   #include <arpa/inet.h>
+
   in_addr_t inet_addr(const char *cp);
 ```
 
@@ -149,5 +150,7 @@ toc_label: 목차
   #include <sys/socket.h>
   #include <netinet/in.h>
   #include <arpa/inet.h>
+
   char *inet_ntoa(const struct in_addr in);
 ```
+

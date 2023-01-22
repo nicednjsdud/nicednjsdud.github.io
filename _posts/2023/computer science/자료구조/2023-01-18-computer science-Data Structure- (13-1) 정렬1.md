@@ -1,5 +1,5 @@
 ---
-title: (자료구조) 13-1 정렬 (선택 정렬, 버블 정렬)
+title: (자료구조) 13-1 정렬 (선택 정렬)
 layout: single
 author_profile: true
 read_time: true
