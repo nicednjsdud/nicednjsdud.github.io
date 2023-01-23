@@ -110,9 +110,11 @@ toc_label: 목차
 
 ![alt](/assets/images/post/ComputerStudy/778.png)
 
-### 4) 인터넷 소켓 통신을 이용하는 소프트우에어
+### 4) 인터넷 소켓 통신을 이용하는 소프트웨어
 
 - 웹 브라우저
 - ftp
 - telnet
 - ssh
+
+![alt](/assets/images/post/ComputerStudy/779.png)

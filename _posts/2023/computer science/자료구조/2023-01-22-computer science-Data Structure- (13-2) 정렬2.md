@@ -172,11 +172,15 @@ toc_label: 목차
 - 전체 비교횟수 = n-1
 - 시간 복잡도 : `O(n)`
 
+![alt](/assets/images/post/ComputerStudy/747.png)
+
 ##### (2-2) 최악의 경우
 
 - 모든 원소가 역순으로 되어있어서 비교횟수가 최대인 경우
 - 전체 비교횟수 = 1+2+3+ ... + (n-1) = n(n-1)/2
 - 시간 복잡도 : `O(n(2승))`
+
+![alt](/assets/images/post/ComputerStudy/748.png)
 
 ##### (2-3)
 
