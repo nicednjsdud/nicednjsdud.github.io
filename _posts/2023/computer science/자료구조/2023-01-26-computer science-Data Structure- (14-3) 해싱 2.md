@@ -83,3 +83,21 @@ toc_label: 목차
 
 - 해시 테이블의 크기 : 5
 - 해시 함수 : 제산 함수 사용, 해시 함수 h(k) = k mod 5
+
+```c
+  저장할 키 값 : {45, 9, 10, 96, 25}
+```
+
+- 키 값 45 저장 : h(45) = 45 mod 5 = 0 => 해시 테이블 0번에 45 저장
+- 키 값 9 저장 : h(9) = 9 mod 5 = 4 => 해시 테이블 4번에 9 저장
+
+![alt](/assets/images/post/ComputerStudy/801.png)
+
+- 키 값 10 저장 : h(10) = 10 mod 5 = 0 => 해시 테이블 0번에 10 저장
+- 키 값 96 저장 : h(96) = 96 mod 5 = 1 => 해시 테이블 1번에 96 저장
+
+![alt](/assets/images/post/ComputerStudy/802.png)
+
+- 키 값 25 저장 : h(25) = 25 mod 5 = 0 => 해시 테이블 0번에 25 저장
+
+![alt](/assets/images/post/ComputerStudy/803.png)
