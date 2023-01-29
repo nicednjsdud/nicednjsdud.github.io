@@ -96,3 +96,5 @@ toc_label: 목차
 4. `foo_fops`는 모듈내에 파일 연산 가리킴.
 
 - 디바이스 드라이버에 대응하는 함수와 연관
+
+![alt](/assets/images/post/ComputerStudy/808.png)
