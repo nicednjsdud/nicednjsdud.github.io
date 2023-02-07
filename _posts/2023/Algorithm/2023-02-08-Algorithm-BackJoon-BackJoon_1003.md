@@ -26,8 +26,8 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/1003_1.png)
 ![alt](/assets/images/post/Algorithm/1003_2.png)
+![alt](/assets/images/post/Algorithm/1003_1.png)
 
 ## 풀이
 
