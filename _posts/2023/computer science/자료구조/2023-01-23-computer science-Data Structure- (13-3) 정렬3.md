@@ -13,7 +13,7 @@ tag: Internet
 article_tag1: Internet
 article_section: Internet
 meta_keywords: CS50,computer,cs,자료구조
-last_modified_at: "2023-01-23 14:00:00 +0800"
+last_modified_at: "2023-01-24 14:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -98,12 +98,12 @@ toc_label: 목차
 
 ##### (2-1) 분할 단계
 
-* n개의 원소를 분할하기 위해서 `log2n`번의 단계 수행
+- n개의 원소를 분할하기 위해서 `log2n`번의 단계 수행
 
 ##### (2-2) 병합 단계
 
-* 부분집합의 원소를 비교하면서 병합하는 단계에서 최대 `n`번의 비교연산 수행
+- 부분집합의 원소를 비교하면서 병합하는 단계에서 최대 `n`번의 비교연산 수행
 
 ##### (2-3) 전체 병합 정렬의 시간 복잡도
 
-* `O(n log2n)`
+- `O(n log2n)`
