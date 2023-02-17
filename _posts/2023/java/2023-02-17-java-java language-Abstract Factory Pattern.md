@@ -1,0 +1,103 @@
+---
+published: true
+title: Java 36. Abstract Factory Pattern (Design Pattern - 3)
+layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
+categories:
+  - Java
+description: Abstract Factory Pattern
+tag: java language
+article_tag1: Java
+article_section: Java
+meta_keywords: java
+last_modified_at: "2023-02-17 13:00:00 +0800"
+toc: true
+toc_sticky: true
+toc_label: 목차
+---
+
+# Abstract Factory Pattern
+
+## 1. Abstract Factory Pattern
+
+- 여러 제품군을 한꺼번에 생성하는 패턴
+
+## 2. 의도와 동기
+
+- 구체적인 클래스를 생성하지 않고도 서로 관련성이 있거나 독립적인 여러 객체의 군을 생성하기 위한 인터페이스 제공
+- 추상화된 인터페이스 팩토리를 제공하고 상황에 따라 그에 맞는 인스턴스들이 생성되도록 함
+- 가령 데이터베이스에 따라 DAO 클래스가 달라져야 한다고 할 때, 현재 사용해야 하는 DB의 종류에 따른 DAO 인스턴스를  
+  한꺼번에 생성
+- 위젯을 생성하여 보여줄 때 선택한 옵션에 따라 위젯의 set이 달라질 수 있도록 함
+- 생성되고 구성되고 표현되는 방식과 무관하게 시스템을 독립적으로 만들고자 할 때
+- 하나 이상의 제품군들 중 하나를 선택하여 시스템을 설정해야 하고 한번 구성한 제품을 다른것으로 대체할 수 있을 때
+
+## 3. 객체 협력
+
+### 1) AbstractFactory
+
+- 개념적 제품에 대한 객체를 생성하는 오퍼레이션 인터페이스를 제공
+
+### 2) ConcreteFactory
+
+- 구제적인 제품에 대한 객체를 생성하는 오퍼레이션 제공
+
+### 3) AbstractProduct
+
+- 개념적 제품 객체에 대한 인터페이스를 제공
+
+### 4) ConcreteProduct
+
+- 구체적으로 팩토리가 생성할 객체를 정의하고, AbstractProduct가 정의하고 있는 인터페이스를 구현
+
+### 5) Client
+
+- AbstractFactory 와 AbstractProduct 클래스에 선언된 인터페이스를 사용
+
+## 4. 구현
+
+- UserInfo.java
+
+```java
+  package domain.userinfo;
+
+  public class UserInfo {
+
+    private String userId;
+    private String password;
+    private String userName;
+
+    // getter, setter
+    ...
+  }
+```
+
+- Product.java
+
+```java
+  package domain.product;
+
+  public class Product {
+
+    private String productId;
+    private String productName;
+
+    // getter, setter
+    ...
+  }
+```
+
+- ProductDao.java **(Interface)**
+
+```java
+  public interface ProductDao {
+
+    void insertProduct (Product product);
+    void updateProduct (Product product);
+    void deleteProduct (Product product);
+  }
+```
