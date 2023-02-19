@@ -58,7 +58,14 @@ toc_label: 목차
 
 - AbstractFactory 와 AbstractProduct 클래스에 선언된 인터페이스를 사용
 
-## 4. 구현
+## 4. 중요할 결론
+
+* 일반적으로 ConcreteFactory 클래스의 인스턴스는 실행 할 때 만들어진다.
+* 구체적 팩토리는 어떤 특징 구현을 갖는 제품 객체를 생성한다. 
+* 서로 다른 제품 객체를 생성하기 위해서 사용자는 서로 다른 ConcreteFactory를 사용
+* AbstractFactory는 ConcreteFactory 서브클래스를 통해 필요한 제품 객체를 생성하는 책임을 위임
+
+## 5. 구현
 
 - UserInfo.java
 
@@ -94,10 +101,264 @@ toc_label: 목차
 - ProductDao.java **(Interface)**
 
 ```java
+  package domain.product.product;
+
+  import doamin.product.Product;
+
   public interface ProductDao {
 
     void insertProduct (Product product);
     void updateProduct (Product product);
     void deleteProduct (Product product);
   }
+```
+
+- UserInfoDao.java **(Interface)**
+
+```java
+  package domain.userinfo.dao;
+
+  import domain.userInfo.userInfo
+
+  public interface UserInfoDao {
+
+    void insertUserInfo (UserInfo userInfo);
+    void updateUserInfo (UserInfo userInfo);
+    void deleteUserInfo (UserInfo userInfo);
+  }
+```
+
+### Mysql, Oralce DAO 생성
+
+- ProductMySqlDao.java
+
+```java
+  package domain.product.dao.mysql
+
+  import domain.product.Product;
+  import domain.product.dao.ProductDao;
+
+  public class ProductMySQlDao implements ProductDao{
+
+      @Override
+      public void insertProduct(Product product){
+
+      }
+
+      @Override
+      public void updateProduct(Product product){
+
+      }
+
+      @Overrdie
+      public void deleteProduct(Product product){
+
+      }
+  }
+```
+
+- ProductOracleDao.java
+
+```java
+  package domain.product.dao.oracle
+
+  import domain.product.Product;
+  import domain.product.dao.ProductDao;
+
+  public class ProductOracleDao implements ProductDao{
+
+      @Override
+      public void insertProduct(Product product){
+
+      }
+
+      @Override
+      public void updateProduct(Product product){
+
+      }
+
+      @Overrdie
+      public void deleteProduct(Product product){
+
+      }
+  }
+```
+
+- UserInfoMySqlDao.java
+
+```java
+  package domain.userinfo.dao.mysql
+
+  import domain.userinfo.userInfo;
+  import domain.userinfo.dao.UserInfoDao;
+
+  public class UserInfoMySQlDao implements UserInfoDao{
+
+      @Override
+      public void insertUserInfo(UserInfo userInfo){
+
+      }
+
+      @Override
+      public void updateUserInfo(UserInfo userInfo){
+
+      }
+
+      @Overrdie
+      public void deleteUserInfo(UserInfo userInfo){
+
+      }
+  }
+```
+
+- ProductOracleDao.java
+
+```java
+  package domain.userinfo.dao.oracle
+
+  import domain.userinfo.UserInfo;
+  import domain.userinfo.dao.UserInfo;
+
+  public class UserInfoOracleDao implements UserInfoDao{
+
+      @Override
+      public void insertUserInfo(UserInfo userInfo){
+
+      }
+
+      @Override
+      public void updateUserInfo(UserInfo userInfo){
+
+      }
+
+      @Overrdie
+      public void deleteUserInfo(UserInfo userInfo){
+
+      }
+  }
+```
+
+### Factory 생성
+
+* DaoFactory.java
+
+```java
+  import domain.product.dao.ProductDao;
+  import domain.userinfo.dao.UserInfoDao;
+
+  public interface DaoFactory{
+
+    public UserInfoDao createUserInfoDao();
+    public ProductDao createProductDao();
+  }
+```
+
+* OralceDaoFactory.java
+
+```java
+
+  import domain.product.dao.ProductDao;
+  import domain.product.dao.oracle.ProductOralceDao;
+  import domain.userinfo.dao.UserInfoDao;
+  import domain.userinfo.dai.oracle.UserInfoOracleDao;
+
+  public class OracleDaoFactory implements DaoFactory{
+
+    @Override
+    public UserInfoDao createUserInfoDao() {
+      return new UserInfoOracleDao();
+    }
+
+    @Override
+    public ProductDao createProductDao() {
+      return new ProductOracleDao();
+    }
+  }
+```
+
+* MysqlDaoFactory.java
+
+```java
+
+  import domain.product.dao.ProductDao;
+  import domain.product.dao.mysql.ProductOralceDao;
+  import domain.userinfo.dao.UserInfoDao;
+  import domain.userinfo.dai.mysql.UserInfoOracleDao;
+
+  public class MysqlDaoFactory implements DaoFactory{
+
+    @Override
+    public UserInfoDao createUserInfoDao() {
+      return new UserInfoMysqlDao();
+    }
+
+    @Override
+    public ProductDao createProductDao() {
+      return new ProductMysqlDao();
+    }
+  }
+```
+
+### Web (main)
+
+* WebClient.java
+
+```java
+  public class WebClinet {
+
+    public static void main(String[] args){
+      
+      FileInputStream fis = new FileInputStream("db.properties");
+
+      Properties prop = new Properties();
+      prop.load(fis);
+
+      String dbType = prop.getProperty("DBTYPE");
+
+      UserInfo userInfo = new UserInfo();
+      userInfo.setUserId("12345");
+      userInfo.setPassword("!@#$%");
+      userInfo.setUserName("BOB");
+
+      Product product = new Product;
+      product.setProductId("0011AA");
+      product.setProductName("TV");
+
+      DaoFactory daoFactory = null;
+
+      if(dbType.equals("MYSQL")){
+        daoFactory = new MySqlDaoFactory();
+      }
+      else if (dbType.equals("ORACLE")){
+        daoFactory = new OracleDaoFactory();
+      }
+      else{
+        System.out.println("error");
+      }
+
+      UserInfoDao userInfoDao = daoFactory.createUserInfoDao();
+
+      userInfoDao.insertUserInfo(userInfo);
+      userInfoDao.updateUserInfo(userInfo);
+      userInfoDao.deleteUserInfo(userInfo);
+
+      ProductDao productDao = daoFactory.createProductDao();
+
+      productDao.insertProduct(product);
+      productDao.updateProduct(product);
+      productDao.deleteProduct(product);
+    }
+  }
+```
+
+* db.properties
+
+```java
+  DBTYPE = ORACLE
+```
+
+* 혹은
+
+```java
+  DBTYPE = MYSQL
 ```
