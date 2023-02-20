@@ -60,10 +60,10 @@ toc_label: 목차
 
 ## 4. 중요할 결론
 
-* 일반적으로 ConcreteFactory 클래스의 인스턴스는 실행 할 때 만들어진다.
-* 구체적 팩토리는 어떤 특징 구현을 갖는 제품 객체를 생성한다. 
-* 서로 다른 제품 객체를 생성하기 위해서 사용자는 서로 다른 ConcreteFactory를 사용
-* AbstractFactory는 ConcreteFactory 서브클래스를 통해 필요한 제품 객체를 생성하는 책임을 위임
+- 일반적으로 ConcreteFactory 클래스의 인스턴스는 실행 할 때 만들어진다.
+- 구체적 팩토리는 어떤 특징 구현을 갖는 제품 객체를 생성한다.
+- 서로 다른 제품 객체를 생성하기 위해서 사용자는 서로 다른 ConcreteFactory를 사용
+- AbstractFactory는 ConcreteFactory 서브클래스를 통해 필요한 제품 객체를 생성하는 책임을 위임
 
 ## 5. 구현
 
@@ -133,7 +133,7 @@ toc_label: 목차
 - ProductMySqlDao.java
 
 ```java
-  package domain.product.dao.mysql
+  package domain.product.dao.mysql;
 
   import domain.product.Product;
   import domain.product.dao.ProductDao;
@@ -187,7 +187,7 @@ toc_label: 목차
 - UserInfoMySqlDao.java
 
 ```java
-  package domain.userinfo.dao.mysql
+  package domain.userinfo.dao.mysql;
 
   import domain.userinfo.userInfo;
   import domain.userinfo.dao.UserInfoDao;
@@ -240,7 +240,7 @@ toc_label: 목차
 
 ### Factory 생성
 
-* DaoFactory.java
+- DaoFactory.java
 
 ```java
   import domain.product.dao.ProductDao;
@@ -253,7 +253,7 @@ toc_label: 목차
   }
 ```
 
-* OralceDaoFactory.java
+- OralceDaoFactory.java
 
 ```java
 
@@ -276,7 +276,7 @@ toc_label: 목차
   }
 ```
 
-* MysqlDaoFactory.java
+- MysqlDaoFactory.java
 
 ```java
 
@@ -301,13 +301,13 @@ toc_label: 목차
 
 ### Web (main)
 
-* WebClient.java
+- WebClient.java
 
 ```java
   public class WebClinet {
 
     public static void main(String[] args){
-      
+
       FileInputStream fis = new FileInputStream("db.properties");
 
       Properties prop = new Properties();
@@ -351,13 +351,13 @@ toc_label: 목차
   }
 ```
 
-* db.properties
+- db.properties
 
 ```java
   DBTYPE = ORACLE
 ```
 
-* 혹은
+- 혹은
 
 ```java
   DBTYPE = MYSQL
