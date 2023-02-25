@@ -64,3 +64,65 @@ toc_label: 목차
   item을 관리하고 그리는 방식을 정하도록 한다.
 - 이 방법은 실제 보여주는 부분과 데이터가 다양한 방식의 View에 활용될 수 있고, 이 때 중간에서 사용되는 여러 Adapter등이 데이터와  
   View를 연결해준다.
+
+## 6. 예제
+
+- Print.java (interface)
+
+```java
+  package adapter;
+  public interface Print {
+
+    public void printWeek();
+    public void printStrong();
+  }
+```
+
+- Banner.java
+
+```java
+  package adapter;
+  public class Banner{
+
+    private String string;
+    public Banner(String string){
+      this.string = string;
+    }
+
+    public void showWithParen(){
+
+      System.out.println("(" + string + ")");
+    }
+
+    public void showWithAster(){
+
+      System.out.println("**" + string + "**");
+    }
+  }
+```
+
+- PrintBanner.java
+
+```java
+
+  package adapter;
+
+  public class PrintBanner implements Print  {
+
+    private Banner banner;
+
+    public PrintBanner(String string){
+      banner = new Banner(string);
+    }
+
+    @Override
+    public void printWeek(){
+      banner.showWithParen();
+    }
+
+    @Override
+    public void printString(){
+      banner.showWithAster();
+    }
+  }
+```
