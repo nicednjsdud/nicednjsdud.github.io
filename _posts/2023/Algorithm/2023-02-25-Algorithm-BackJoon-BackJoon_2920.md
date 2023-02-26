@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 지능형 기차 2455 (Java)
+title: BackJoon Algorithm 음계 2920 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -9,12 +9,12 @@ share: true
 related: true
 categories:
   - Algorithm
-description: 피보나치 함수 1003
+description: 음계 2920
 tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-02-09 13:00:00 +0800"
+last_modified_at: "2023-02-25 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,38 +26,55 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/2455.png)
+![alt](/assets/images/post/Algorithm/2920.png)
 
 ## 풀이
 
 ```java
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
-public class Back_2455 {
-    public static void main(String[] args) throws IOException {
+public class Back_2920 {
+    public static void main(String[] args)  {
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-        int station_count = 4;
-        int sum =0;
-        int max = 0;
-        for (int i = 0; i < station_count; i++) {
-            st = new StringTokenizer(br.readLine());
-            int get_off_count = Integer.parseInt(st.nextToken());
-            int ride_count = Integer.parseInt(st.nextToken());
+        Scanner sc = new Scanner(System.in);
 
-            sum -= get_off_count;
-            sum += ride_count;
-            if(sum >= max){
-                max = sum;
+        int count = 0;
+        boolean upDown = false;
+        String msg = "";
+        for(int i = 0 ; i< 8; i++){
+            int scale = sc.nextInt();
+            if(i == 0){
+                count = scale;
+                if(count == 1){
+                    upDown = true;
+                }
+            }
+            else{
+                if(upDown){
+                    count ++ ;
+                }
+                else{
+                    count -- ;
+                }
+            }
+            if(scale == count){
+                continue;
+            }
+            else{
+                msg = "mixed";
             }
         }
-        System.out.println(max);
-
+        if(msg == ""){
+            if(upDown){
+                msg = "ascending";
+            }
+            else{
+                msg = "descending";
+            }
+        }
+        System.out.println(msg);
     }
 }
+
 
 ```

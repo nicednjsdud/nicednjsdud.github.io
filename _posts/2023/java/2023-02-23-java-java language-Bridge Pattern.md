@@ -71,3 +71,155 @@ toc_label: 목차
 ### 2) Adapter
 
 - 서로 관련없는 클래스들이 연결 될 수 있다.
+
+## 6. 예제
+
+* List는 선형 자료구조입니다. 그 중에는 Stack, Queue, Deque와 같이 특정 기능을 제공하는 자료구조가 있습니다.
+* List를 구현하는 방법은 크게 Array와 LinkedList가 있습니다.
+
+### 1) List
+
+* AbstractList.java (Interface)
+
+```java
+  package impl;
+
+  public interface AbstractList<T> {
+
+    public void addElement(T obj);
+    public T deleteElement(int i);
+    public int insertElement(T obj,int i);
+    public T getElement(int i);
+    public int getelementSize();
+  }
+```
+
+* List.java (abstract)
+
+```java
+  package list;
+
+  import impl.AbstractList;
+
+  public abstract class List<T> {
+
+    AbstractList<T> impl;
+
+    public List(AbstractList<T> list){
+      impl = list;
+    }
+
+    public void add( T obj) {
+        impl.addElement(obj);
+    }
+
+    public T remove(int i) {
+        return impl.deleteElement(i);
+    }
+
+    public T get(int i){
+        return impl.getElement(i);
+    }
+
+    public int getSize(){
+        return impl.getElementSize();
+    }
+  }
+```
+
+### 2) Stack
+
+* Stack.java
+
+```java
+  package list;
+
+  import impl.AbstractList;
+
+  public class Stack<T> extends List<T> {
+
+      public Stack(AbstractList<T> list){
+        super(list);
+      }
+
+      public void push() {
+        impl.insertElement(obj, 0);
+      }
+
+      public T pop() {
+        return impl.deleteElement(0);
+      }
+  }
+```
+
+### 3) LinkedList
+
+* LinkedListImpl.java
+
+```java
+  package impl;
+
+  import java.util.LinkedList;
+
+  public class LinkedListImpl<T> implements AbstractList<T> {
+      
+      LinkedList<T> linkedList;
+
+      public LinkedListImpl(){
+        linkedList = new LinkedList<T>();
+      }
+
+      @Override
+      publilc void addElement(T obj){
+        linkedList.add(obj);
+      }
+
+      @Override
+      public int insertElement(T obj, int i){
+        linkedList.add(i, obj);
+        return i;
+      }
+
+      @Override
+      public T deleteElement(int i){
+        return linkedList.remove(i);
+      }
+
+      @Override
+      public T getElement(int i){
+        return linkedList.remove(i);
+      }
+
+      @Override
+      public int getElementSize(){
+        return linkedList.size();
+      }
+  }
+```
+
+### 4) Test
+
+* BridgeTest.java
+
+```java
+  package test;
+
+  import impl.LinkedListImpl;
+  import list.stack;
+
+  public class BridgeTest {
+
+    public static void main(String[] args){
+
+      Stack<String> linkedListStack = new Stack<String>(new LinkedListImpl<String>());
+      linkedListStack.push("AAA");
+      linkedListStack.push("BBB");
+      linkedListStack.push("CCC");
+
+      System.out.println(linkedListStack.pop());  // CCC
+      System.out.println(linkedListStack.pop());  // BBB  
+      System.out.println(linkedListStack.pop());  // AAA
+
+    }
+  }
+```
