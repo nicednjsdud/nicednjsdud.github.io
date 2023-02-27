@@ -1,6 +1,6 @@
 ---
 published: true
-title: Java 44. Observer Pattern (Design Pattern - 13s)
+title: Java 45. Observer Pattern (Design Pattern - 13)
 layout: single
 author_profile: true
 read_time: true
