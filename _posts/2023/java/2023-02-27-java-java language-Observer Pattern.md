@@ -62,3 +62,135 @@ toc_label: 목차
 - Subject와 Observer간의 추상적인 결합만의 존재
 - BroadCast 방식의 교류가 가능
 - 데이타와 그 뷰 사이에 자주 사용되는 방법
+
+## 5. 예제
+
+- observer.java (interface)
+
+```java
+  package observer;
+
+  public interface Observer{
+
+    public void update(NumberGenerator generator);
+
+  }
+```
+
+- NumberGenerator.jaba
+
+```java
+  package observer;
+
+  public abstract class NumberGenerator {
+
+    private List<Observer> observers = new ArrayList<>();
+
+    public void addObserver(Observer observer){
+      observers.add(observer);
+    }
+
+    public void removeObserver(Observer observer){
+      observers.remove(observer);
+    }
+
+    public void notifyObservers(){
+      Iterator<Observer> ir = observers.iterator();
+
+      while(ir.hasNext()){
+        Observer observer = ir.next();
+        observer.update(this);
+      }
+    }
+
+    public abstract int getNumeber();
+    public abstract void excute();
+  }
+```
+
+- GraphObserver.java
+
+```java
+  package observer;
+
+  public class GraphObserver implements Observer {
+
+    @Override
+    public void update(NumberGenerator generator){
+
+      System.out.println("GraphObserver");
+      int number = generator.getNumber();
+
+      for(int i = 0; i< number; i ++){
+        System.out.print("*");
+      }
+      System.out.println();
+
+      try{
+        Thread.sleep(100);
+      }catch(InterruptedException e){
+        e.printStackTrace();
+      }
+    }
+  }
+```
+
+- DigitObserver.java
+
+```java
+  package observer;
+
+  public class DigitObserver implements Observer {
+
+    public void update(NumberGenerator generator){
+      systm.out.println("DigitObserver: " + generator.getNumber());
+      try{
+        Thread.sleep(100);
+      } catch(InterruptedException e){
+        e.printStackTrace();
+      }
+    }
+  }
+```
+
+- RandomNumberGenerator.java
+
+```java
+  package observer;
+  public class RandomNumberGenerator extends NumberGenerator{
+
+    private int number;
+    private Random random = new Random();
+
+    @Override
+    public int getNumber(){
+      return number;
+    }
+
+    @Override
+    public void excute(){
+      for(int i = 0 ; i < 50; i ++){
+        number = random.nextInt(50);
+      }
+    }
+  }
+```
+
+- Main.java
+
+```java
+  package observer;
+
+  public class Main {
+
+    public static void main(String[] args){
+
+      NumberGenerator generator = new RandomNumberGenerator();
+      Observer observer1 = new DigitObserver();
+      Observer observer2 = new GraphObserver();
+      generator.addObserver(observer1);
+      generator.addObserver(observer2);
+      generator.execute();
+    }
+  }
+```
