@@ -122,6 +122,12 @@ toc_label: 목차
     @Override
     public Iterator createProduct(Aggregate list, int type){
 
+      if( type == Constant.FORWARD){
+        return new ForwardShelfIterator(list);
+      }
+      else if( type == Constant.REVERSE){
+        return new ReverseShelfIterator(list);
+      }
       return null;
     }
   }
