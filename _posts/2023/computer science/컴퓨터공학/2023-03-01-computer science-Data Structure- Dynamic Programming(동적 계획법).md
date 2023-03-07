@@ -13,7 +13,7 @@ tag: Internet
 article_tag1: Internet
 article_section: Internet
 meta_keywords: CS50,computer,cs,자료구조
-last_modified_at: "2023-01-26 14:00:00 +0800"
+last_modified_at: "2023-03-01 14:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
