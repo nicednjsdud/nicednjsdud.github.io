@@ -78,5 +78,66 @@ public class Back_11723 {
 ### 2) 틀린 풀이 (시간 초과)
 
 ```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        StringBuilder sb = new StringBuilder();
+        int M = Integer.parseInt(br.readLine());
+        boolean[] checkValue = new boolean[M + 1];
+        int reNum[] = new int[M + 1];
+        for (int i = 0; i < M; i++) {
+            st = new StringTokenizer(br.readLine());
+            String oper = st.nextToken();
+            oper = oper + " ";
+            if (!oper.equals("all ") && !oper.equals("empty ")) {
+                int num = Integer.parseInt(st.nextToken());
+                switch (oper) {
+                    case "add ":
+                        if(checkValue[num] == false){
+                            checkValue[num] = true;
+                            reNum[i] = num;
+                        }
+                        break;
+                    case "check ":
+                        if (checkValue[num] == true) {
+                            sb.append(1).append("\n");
+                        } else {
+                            sb.append(0).append("\n");
+                        }
+                        break;
+                    case "remove ":
+                        if (checkValue[num] == true) {
+                            checkValue[num] = false;
+                        }
+                        break;
+                    case "toggle ":
+                        if (checkValue[num] == true) {
+                            checkValue[num] = false;
+                        } else {
+                            checkValue[num] = true;
+                        }
+                        break;
+                }
+            } else if (oper.equals("all ")) {
+                for (int j = 0; j < M; j++) {
+                    checkValue[j] = true;
+                }
+            } else {
+                for (int j = 0; j < reNum.length; j++) {
+                    checkValue[reNum[j]] = false;
+                }
+            }
+        }
+        System.out.println(sb);
+        br.close();
+    }
+}
 
 ```

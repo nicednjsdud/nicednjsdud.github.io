@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-03-04 13:00:00 +0800"
+last_modified_at: "2023-03-03 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차

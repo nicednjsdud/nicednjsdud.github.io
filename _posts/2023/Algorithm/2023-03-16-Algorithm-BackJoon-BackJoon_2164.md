@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 덩치 7568 (Java)
+title: BackJoon Algorithm 카드2 2164 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -9,12 +9,12 @@ share: true
 related: true
 categories:
   - Algorithm
-description: 덩치 7568
+description: 카드2 2164
 tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-03-15 13:00:00 +0800"
+last_modified_at: "2023-03-16 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/7568.png)
+![alt](/assets/images/post/Algorithm/2164.png)
 
 ## 풀이
 
@@ -34,33 +34,24 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class Back_7568 {
+public class Back_2164 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
+        Queue<Integer> q = new LinkedList<>();
         int N = Integer.parseInt(br.readLine());
 
-        int arr[][] = new int[N][2];
-
-        for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            arr[i][0] = Integer.parseInt(st.nextToken());
-            arr[i][1] = Integer.parseInt(st.nextToken());
-
+        for (int i = 1; i <= N; i++) {
+            q.offer(i);
         }
-
-        for (int i = 0; i < N; i++) {
-            int rank = 1;
-
-            for (int j = 0; j < N; j++) {
-                if( i == j ) continue;
-                if(arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1])rank++;
-            }
-            System.out.print(rank + " ");
+        while(q.size() > 1){
+            q.poll();   // 맨앞 버림
+            q.offer(q.poll());  // 두번째를 버리면서 맨뒤에 삽입
         }
+        System.out.println(q.poll());
     }
 }
 

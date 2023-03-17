@@ -53,4 +53,16 @@ toc_label: 목차
 - 프록시는 `대리인`이라는 뜻인데 `Aspect`와 `@Transcational`을 적용한 클래스 or 메서드인 Target을  
   연결해주는 역할을 한다.
 
-1.
+1. Clinet가 API 호출
+2. 프록시 실행
+3. 트랜잭션 코드 실행
+4. 비즈니스 로직 실행
+5. 트랜잭션 코드 실행 (commit / rollback)
+
+![alt](/assets/images/post/ComputerStudy/811.png)
+
+## 4. 테스트와 @Transcational
+
+* 테스트 환경에서는 `@Transactional`이 약간 다르게 동작한다.
+* 성공/실패 결과와는 다르게 테스트 메서드가 종료되면 무조건 롤백
+
