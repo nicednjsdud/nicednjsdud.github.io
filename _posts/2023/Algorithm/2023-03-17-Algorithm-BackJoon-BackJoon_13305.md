@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 카드2 2164 (Java)
+title: BackJoon Algorithm 주유소 13305 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-03-16 13:00:00 +0800"
+last_modified_at: "2023-03-17 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/2164.png)
+![alt](/assets/images/post/Algorithm/13305.png)
 
 ## 풀이
 
@@ -34,25 +34,42 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.StringTokenizer;
 
-public class Back_2164 {
+public class Back_13305 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Queue<Integer> q = new LinkedList<>();
+        StringTokenizer st;
         int N = Integer.parseInt(br.readLine());
 
-        for (int i = 1; i <= N; i++) {
-            q.offer(i);
+        long[] distance = new long[N - 1];    // 거리
+        long[] cost = new long[N];          // 비용
+
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N - 1; i++) {
+            distance[i] = Long.parseLong(st.nextToken());
         }
-        while(q.size() > 1){
-            q.poll();   // 맨앞 버림
-            q.offer(q.poll());  // 두번째를 버리면서 맨뒤에 삽입
+
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
+            cost[i] = Long.parseLong(st.nextToken());
         }
-        System.out.println(q.poll());
+
+        long sum = 0;
+        long minCost = cost[0];  // 처음에 기름을 넣고 가야하므로 처음이 가장 낮은 비용
+
+        for (int i = 0; i < N - 1; i++) {
+
+            if (cost[i] < minCost) {
+                minCost = cost[i];
+            }
+            sum += (minCost * distance[i]);
+        }
+        System.out.println(sum);
+        br.close();
     }
 }
+
 
 ```
