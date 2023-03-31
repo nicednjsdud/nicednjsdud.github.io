@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 삼각형과 세 변 5073 (Java)
+title: BackJoon Algorithm 1037 약수 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-03-26 13:00:00 +0800"
+last_modified_at: "2023-03-28 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/5073.png)
+![alt](/assets/images/post/Algorithm/1037.png)
 
 ## 풀이
 
@@ -36,54 +36,24 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Back_5037 {
+public class Back_1037 {
     public static void main(String[] args) throws IOException {
 
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-        boolean checkFlag = true;
-        StringBuilder sb = new StringBuilder();
-        while (checkFlag) {
-           st = new StringTokenizer(br.readLine(), " ");
 
-           int first_num = Integer.parseInt(st.nextToken());
-           int second_num = Integer.parseInt(st.nextToken());
-           int third_num = Integer.parseInt(st.nextToken());
-           int max = Math.max(first_num,(Math.max(second_num,third_num)));
-            if(first_num == 0 && second_num == 0 && third_num == 0){
-                checkFlag = false;
-            }
-            else{
-                if(max < (first_num + second_num + third_num - max)){
-                    if(first_num == second_num){
-                        if(second_num == third_num){
-                            sb.append("Equilateral").append("\n");
-                        }
-                        else{
-                            sb.append("Isosceles").append("\n");
-                        }
-                    }
-                    else{
-                        if(second_num == third_num){
-                            sb.append("Isosceles").append("\n");
-                        }
-                        else if(first_num == third_num){
-                            sb.append("Isosceles").append("\n");
-                        }
-                        else{
-                            sb.append("Scalene").append("\n");
-                        }
-                    }
-                }
-                else{
-                    sb.append("Invalid").append("\n");
-                }
-            }
+        int T = Integer.parseInt(br.readLine());
 
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+        StringTokenizer st = new StringTokenizer(br.readLine()," ");
+
+        while(T-- > 0){
+            int N = Integer.parseInt(st.nextToken());
+            max = N > max ? N : max;
+            min = N < min ? N : min;
         }
-        System.out.println(sb);
-        br.close();
+        System.out.println(max * min);
     }
 }
 
