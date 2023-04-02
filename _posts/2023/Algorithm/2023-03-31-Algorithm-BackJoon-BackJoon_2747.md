@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 7287 등록 (Java)
+title: BackJoon Algorithm 2747 피보나치 수 (Java)
 layout: single
 author_profile: true
 read_time: true
