@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 17298 오큰수 (Java)
+title: BackJoon Algorithm 11399 ATM (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -9,12 +9,12 @@ share: true
 related: true
 categories:
   - Algorithm
-description: 2748 피보나치 2
+description: 11399 ATM
 tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-04-12 13:00:00 +0800"
+last_modified_at: "2023-04-14 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/17298.png)
+![alt](/assets/images/post/Algorithm/11399.png)
 
 ## 풀이
 
@@ -34,40 +34,34 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Stack;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Back_17298 {
+public class Back_2178 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
+
+        int arr[] = new int[N];
+
         StringTokenizer st = new StringTokenizer(br.readLine());
-        StringBuilder sb = new StringBuilder();
-        Stack<Integer> stack = new Stack<>();
-
-        int value[] = new int[N];
-
         for (int i = 0; i < N; i++) {
-            value[i] = Integer.parseInt(st.nextToken());
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        for (int i = 0; i < N; i++) {
+        Arrays.sort(arr);
 
-            while(!stack.isEmpty() && value[stack.peek()] < value[i]){
-                value[stack.pop()] = value[i];
-            }
-            stack.push(i);
+        int sum = 0;
+        int totalTime = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            totalTime += sum;
         }
-        while(!stack.empty()){
-            value[stack.pop()] = -1;
-        }
-
-        for(int i = 0; i<N;i++){
-            sb.append(value[i]).append(" ");
-        }
-        System.out.println(sb);
+        System.out.println(totalTime);
+        br.close();
     }
 }
+
 
 ```
