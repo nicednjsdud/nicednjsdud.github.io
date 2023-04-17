@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 11399 ATM (Java)
+title: BackJoon Algorithm 1475 방번호 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-04-14 13:00:00 +0800"
+last_modified_at: "2023-04-15 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/11399.png)
+![alt](/assets/images/post/Algorithm/1475.png)
 
 ## 풀이
 
@@ -34,34 +34,31 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
 
-public class Back_2178 {
+public class Back_1475 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-
-        int arr[] = new int[N];
-
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+        int[] arr = new int[10];
+        String str = br.readLine();
+        for (int i = 0; i < str.length(); i++) {
+            int num = Character.getNumericValue(str.charAt(i));
+            if (num == 6) {
+                arr[9]++;
+            } else {
+                arr[num]++;
+            }
         }
-
-        Arrays.sort(arr);
-
-        int sum = 0;
-        int totalTime = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
-            totalTime += sum;
+        int max = 0;
+        for (int i = 0; i < 9; i++) {
+            max = Math.max(max, arr[i]);
         }
-        System.out.println(totalTime);
+        int nine_value = arr[9] / 2;
+        if (arr[9] % 2 == 1) nine_value++;
+        max = Math.max(max, nine_value);
+        System.out.println(max);
         br.close();
     }
 }
-
 
 ```
