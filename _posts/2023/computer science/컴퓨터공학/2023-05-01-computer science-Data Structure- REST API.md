@@ -159,3 +159,7 @@ toc_label: 목차
 - 굳이 필요한가? 어떠한 효용이 있는가?
 
 3. REST API라는 용어를 아무렇게나 쓰지 말자
+
+## 출처
+
+<a href="youtube.com/watch?v=Nxi8Ur89Akw">정의 REST API</a>
