@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/14921.png)
+![alt](/assets/images/post/Algorithm/1654.png)
 
 ## 풀이
 
@@ -36,32 +36,46 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Back_14921 {
+public class Back_1654 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        int arr[] = new int[N];
-        int ans = 1000000000;
         StringTokenizer st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+        int N = Integer.parseInt(st.nextToken());
+        int[] arr = new int[K];
+        long max = 0;
+        for (int i = 0; i < K; i++) {
+            arr[i] = Integer.parseInt(br.readLine());
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+        max++; // 안해주면 런타인 오류 뜸
+
+        long min = 0;
+        long mid = 0;
+        while (min < max) {
+
+            mid = (max + min) / 2;   // 중간값
+
+            long count = 0;
+
+            for (int i = 0; i < arr.length; i++) {
+                count += (arr[i] / mid);
+            }
+
+            if (count < N) {
+                max = mid;
+            } else {
+                min = mid + 1;
+            }
         }
 
-        int start = 0;
-        int end = arr.length - 1;
-
-        while (start < end) {
-            int val = arr[start] + arr[end];
-            if (Math.abs(ans) > Math.abs(val)) ans = val;
-            if (val == 0) break;
-            else if(val > 0) end --;
-            else start ++;
-        }
-
-        System.out.println(ans);
+        System.out.println(min - 1);
         br.close();
     }
 }
+
 
 ```
