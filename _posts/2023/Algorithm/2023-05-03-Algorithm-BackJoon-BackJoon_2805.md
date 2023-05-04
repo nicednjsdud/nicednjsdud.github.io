@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 1654 랜선 자르기 (Java)
+title: BackJoon Algorithm 2805 나무자르기  (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/1654.png)
+![alt](/assets/images/post/Algorithm/2805.png)
 
 ## 풀이
 
@@ -34,32 +34,52 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Back_14921 {
+public class Back_2805 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        int arr[] = new int[N];
-        int ans = 1000000000;
         StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        int arr[] = new int[N];
+        long max = 0;
+
+        st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
+            if (max < arr[i]) {
+                max = arr[i];
+            }
         }
+        Arrays.sort(arr);
+        max ++;
 
-        int start = 0;
-        int end = arr.length - 1;
+        long mid = 0;
+        long min = 0;
 
-        while (start < end) {
-            int val = arr[start] + arr[end];
-            if (Math.abs(ans) > Math.abs(val)) ans = val;
-            if (val == 0) break;
-            else if(val > 0) end --;
-            else start ++;
+        while (min < max) {
+
+            mid = (max + min) / 2;
+
+            long length = 0;
+            for (int i = 0; i < N; i++) {
+                if(arr[i] > mid){
+                    length += arr[i] - mid;
+                }
+            }
+
+            if(length < M){
+                // 자른 길이가 자를려고 한 길이보다 작을때
+                max = mid;
+            }
+            else{
+                min = mid + 1;
+            }
         }
-
-        System.out.println(ans);
+        System.out.println(min - 1);
         br.close();
     }
 }
