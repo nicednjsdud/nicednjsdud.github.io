@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 13900 순서쌍의 곱의 합 (Java)
+title: BackJoon Algorithm 1292 쉽게 푸는 문제 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-05-04 13:00:00 +0800"
+last_modified_at: "2023-05-06 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/13900.png)
+![alt](/assets/images/post/Algorithm/1292.png)
 
 ## 풀이
 
@@ -36,25 +36,29 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Back_13900 {
+public class Back_1292 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        long arr[] = new long[N + 1];
-        long cumSum[] = new long[N + 1];
         StringTokenizer st = new StringTokenizer(br.readLine());
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
 
-        arr[0] = 0L;
-        cumSum[0] = 0L;
-        for (int i = 1; i <= N; i++) {
-            arr[i] = Long.parseLong(st.nextToken());
-            cumSum[i] = arr[i] + cumSum[i - 1];
+        int[] arr = new int[1002];
+        int count = 1;
+
+        for (int i = 1; i <= 1000; i++) {
+            for (int j = 0; j < i; j++) {
+                if (count == 1001) break;
+                arr[count] = i;
+                count++;
+            }
         }
 
-        long sum = 0L;
-        for (int i = 2; i <= N; i++) {
-            sum += arr[i] * cumSum[i - 1];
+        int sum = 0;
+
+        for (int i = A; i <= B; i++) {
+            sum += arr[i];
         }
         System.out.println(sum);
         br.close();
