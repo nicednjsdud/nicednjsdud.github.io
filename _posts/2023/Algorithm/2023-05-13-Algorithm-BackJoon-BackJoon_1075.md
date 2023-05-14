@@ -25,7 +25,7 @@ toc_label: 목차
 ![alt](https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png)
 
 ## 문제
-
+-
 ![alt](/assets/images/post/Algorithm/1075.png)
 
 ## 풀이

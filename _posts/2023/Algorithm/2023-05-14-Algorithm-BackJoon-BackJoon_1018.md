@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 1075 나누기 (Java)
+title: BackJoon Algorithm 1018 체스판 다시 칠하기 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-05-13 13:00:00 +0800"
+last_modified_at: "2023-05-14 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -25,8 +25,8 @@ toc_label: 목차
 ![alt](https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png)
 
 ## 문제
-
-![alt](/assets/images/post/Algorithm/1075.png)
+-
+![alt](/assets/images/post/Algorithm/1018.png)
 
 ## 풀이
 
@@ -34,25 +34,51 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-public class Back_1075 {
+public class Back_1018 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        long N = Long.parseLong(br.readLine());
-        long F = Long.parseLong(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        long temp = (N / 100) * 100;
+        int row = Integer.parseInt(st.nextToken());
+        int col = Integer.parseInt(st.nextToken());
 
-        while (true) {
-            if (temp % F == 0) {
-                long result = temp % 100;
-                if (result < 10) System.out.println("0" + result);
-                else System.out.println(result);
-                return;
-            }
-            temp++;
+        String board[] = new String[row];
+
+        for (int i = 0; i < row; i++) {
+            board[i] = br.readLine();
         }
+
+        int sol = Integer.MAX_VALUE;
+
+        for (int i = 0; i <= row - 8; i++) {
+            for (int j = 0; j <= col - 8; j++) {
+                int curSol = solved(i, j, board);
+
+                sol = Math.min(curSol, sol);
+            }
+        }
+        System.out.println(sol);
+        br.close();
+    }
+
+    private static int solved(int startRow, int startCol, String[] board) {
+        String orgBoard[] = {"WBWBWBWB", "BWBWBWBW"};
+        int count = 0;
+
+        for (int i = 0; i < 8; i++) {
+            int row = startRow + i;
+            for (int j = 0; j < 8; j++) {
+                int col = startCol + j;
+
+                if (board[row].charAt(col) != orgBoard[row % 2].charAt(j)) {
+                    count++;
+                }
+            }
+        }
+        return Math.min(count, 64 - count);
     }
 }
 
