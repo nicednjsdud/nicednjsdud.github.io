@@ -1,5 +1,5 @@
 ---
-title: (10분 테크톡) TCP / IP
+title: (10분 테크톡) Web Socket
 layout: single
 author_profile: true
 read_time: true
@@ -13,215 +13,190 @@ tag: Internet
 article_tag1: Internet
 article_section: Internet
 meta_keywords: CS50,computer,cs,자료구조
-last_modified_at: "2023-05-04 14:00:00 +0800"
+last_modified_at: "2023-05-17 14:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
 ---
 
-# TCP/IP
+# 목차
 
-## 목차
+1. 웹 소켓이란?
+2. 웹 소켓의 특징
+3. 웹 소켓 이전의 실시간 통신
+4. 웹 소켓 동작 방법
+5. 웹 소켓 프로토콜의 특징
+6. 웹 소켓 특이점
 
-1. 인터넷
-2. TCP/IP 계층
-3. TCP/IP 흐름
-4. 신롸할 수 있는 TCP
+## 1. 웹 소켓이란?
 
-## 1. 인터넷
+* 두 프로그램간의 메세지를 교환하기 위한 통신방법이다.
+* W3C와 IETF에 의해 자리잡은 표준 프로토콜 중 하나이다.
+* 현재 인터넷 환경(HTML5)에서 많이 사용된다.
+* 웹소켓을 지원하는 브라우저의 경우 **웹 소켓 프로토콜을 지원**
 
-- 전 세계에 걸쳐 파일 전송 등의 데이터 통신 서비스를 받을 수 있는 컴퓨터 네트워크 시스템
+![alt](/assets/images/post/ComputerStudy/1017.png)
 
-## 2. TCP / IP
+## 2. 웹 소켓의 특징
 
-- 인터넷에서 컴퓨터들이 서로 정보를 주고 받는데 쓰이는 프로토콜의 집합
+### 1) 양방향 통신 ( Full - Duplex )
 
-## 3. TCP / IP의 계층
+* 데이터 송수신을 동시에 처리할 수 있는 통신 방법
+* 클라이언트와 서버가 서로에게 원할때 데이터를 주고 받을 수 있다.
+* **통상적인 Http 통신**은 Client가 요청을 보내는 경우에만 Server가 응답하는 **단방향 통신**
 
-![alt](/assets/images/post/ComputerStudy/998.png)
+### 2) 실시간 네트워킹 ( Real Time - Networking)
 
-### 1) Application Layer
+* 웹 환경에서 **연속된 데이터를 빠르게 노출**
+* Ex) 채팅, 주식, 비디오 데이터
+* 여러 단말기에 빠르게 데이터를 교환
 
-- 특정 서비스를 제공하기 위해 애플리케이션 끼리 정보를 주고 받을 수 있음
-- FTP, HTTP, SSH, Telnet, DNS, SMTP
+## 3. 웹 소켓 이전의 비슷한 기술
 
-### 2) Transport Layer
+### 1) Polling
 
-- 송신된 데이터를 수신측 애플리케이션에 확실히 전달하게 함
-- TCP, UDP, RTP, RTCP
+![alt](/assets/images/post/ComputerStudy/1018.png)
 
-### 3) Internet Layer
+* 서버로 일정 주기 요청 송신
+* real-time 통신에서는 언제 통신이 발생할지 예측이 불가능
+* 불필요한 request와 connection 생성
+* Real-time 통신이라고 부르기 애매할 정도의 실시간성
 
-- 수신 측까지 데이터를 전달하기 위해 사용됨
-- IP, ARP, ICMP, RARP, OSPF
+### 2) Long Polling
 
-### 4) Network Access Layer
+![alt](/assets/images/post/ComputerStudy/1019.png)
 
-- 네트워크에 직접 연결된 기기 간 전송을 할 수 있도록 해줌
-- Ethernet, PPP, Token Ring
+* 서버에 요청 보내고 이벤트가 생겨 응답 받을 때 까지 연결 종료 X 
+* 응답 받으면 끊고 다시 재요청
+* 많은 양의 메세지가 쏟아질 경우 polling과 같다.
 
-## 4. TCP / IP의 흐름
+### 3) Streaming
 
-- "www.google.com"을 웹브라우저에 입력하면 무슨일 일어날까?
+![alt](/assets/images/post/ComputerStudy/1020.png)
 
-### 1) Application Layer (HTTP)
+* 서버에 요청 보내고 끊기지 않은 연결 상태에서 끊임없이 데이터 수신
+* 클라이언트에서 서버로의 데이터 송신이 어렵다.
 
-- (http) www.google.com(:80)
-- HTTP로 작성된 해당 요청 처리 부탁해요
-- 아래와 같은 HTTP Request 메세지를 구글 80포트로 보냄
+### 정리
 
-![alt](/assets/images/post/ComputerStudy/999.png)
+* 결과적으로 이 모든 방법이 Http를 통해 통신하기 때문에 Request, Response 둘다 Header가 불필요하게 큼
 
-### 2) Transport Layer (TCP)
+## 4. 웹 소켓 동작 방법 - 핸드 쉐이킹 
 
-![alt](/assets/images/post/ComputerStudy/1000.png)
+### 1) 요청
 
-- SP : 시작 포트 번호
-- DP : 목적지 포트 번호
+![alt](/assets/images/post/ComputerStudy/1021.png)
 
-### 3) Internet Layer (IP)
+#### 1-1) Get /chat HTTP/1.1
 
-![alt](/assets/images/post/ComputerStudy/1001.png)
+* 반드시 GET 메서드를 사용해야 한다.
 
-- SA : 시작 IP 주소
-- DA : 목적지 IP 주소
-- 지금은 www.google.com이라는 도메인 정보만 알고 있음
-- DNS 프로토콜을 통해서 도메인 정보로 IP주소를 알아낼 수 있음
+#### 1-2) Host: server.example.com
 
-#### 3-1) DNS
+* 웹 소켓 서버의 주소
 
-![alt](/assets/images/post/ComputerStudy/1002.png)
+#### 1-3) Upgrade: websocket
 
-- DNS에게 domain에 대한 IP주소를 알고 싶다고 요청
-- 그러면 OS에서 DNS서버로 요청을 보내게 됨
+* 현재 클라이언트, 서버, 전송 프로토콜 연결에서 다른 프로토콜로 업그레이드 또는 변경하기 위한 규칙
 
-  - DNS서버 주소는 이미 컴퓨터에 등록이 되어있음
+#### 1-4) Connection : Upgrade
 
-- DNS 또한 HTTP와 같은 애플리케이션 계층 프로토콜이다. (53번 포트)
+* Upgrade 헤더 필드가 명시되었을 경우 송신자는 반드시 Upgrade 옵션을 지정한 **Connection 헤더 필드**로 전송
 
-![alt](/assets/images/post/ComputerStudy/1003.png)
+#### 1-5) Sec-WebSocket-key : sfuiodADfjd
 
-- DNS도 HTTP Request로 도메인이 담긴 쿼리를 도메인 서버로 보냄
-- Transport Layer에서 UDP라는 프로토콜을 사용
-- UDP는 TCP와는 다르게 헤더가 간단
-  - UDP는 비연결지향형 프로토콜이기 때문이다.
+* 길이가 16바이트인 임의로 선태고딘 숫자를 base64로 인코딩 한 값
 
-### 4) Network Access Layer
+#### 1-6) Origin:http://example.com
 
-![alt](/assets/images/post/ComputerStudy/1004.png)
+* 클라이언트로 웹 브라우저를 사용하는 경우에 필수항목으로 클라이언트의 주소
 
-- 물리적으로 연결된 공유기의 MAC 주소가 필요하다.
+#### 1-7) Sec-WebSocket-Protocol: chat, superchat
 
-![alt](/assets/images/post/ComputerStudy/1005.png)
+* 클라이언트가 요청하는 여러 서브 프로토콜을 의미
+* 공백문자로 구분되며 순서에 따라 우선권이 부여
+* 서버에서 여러 프로토콜 혹은 프로토콜 버전을 나눠서 서비스 할 경우 필요한 정보
 
-- 이공유기를 통해 다른 네트워크와 연결이 가능
-- 게이트웨이라고 부르기도 함
 
-![alt](/assets/images/post/ComputerStudy/1006.png)
+### 2) 응답
 
-- netstat -rn 명령어를 통해 게이트웨이 IP를 알 수 있음
-- IP주소로 MAC주소를 알아내기 위해 ARP 프로토콜을 사용
+![alt](/assets/images/post/ComputerStudy/1022.png)
 
-#### 4-1) ARP
+#### 2-1) HTTP/1.1 101 Switching Protocols
 
-- IP주소를 MAC주소로 바꾸어주는 주소해석 프르토콜
+* 101 Switching Protocols가 Response로 오면 웹소켓이 연결
 
-### 5) 3 - way - Handshaking
+#### 2-2) Sec-WebSock-Accept : 3f9809sd
 
-- TCP는 연결 지향형 프로토콜이기 때문에 송신측과 수신측이 서로 연결되는 작업이 필요하다.
+* 클라이언트로부터 받은 Sec-WebSocket-Key를 사용하여 계산된 값
 
-![alt](/assets/images/post/ComputerStudy/1007.png)
+## 5. 웹 소켓 동작 방법 - 데이터 전송
 
-- 3-way-Handshaking을 사용하기위해 TCP 헤더에 표시한 플래그들이 사용됨
+![alt](/assets/images/post/ComputerStudy/1023.png)
 
-  - 이러한 플래그들을 컨트롤 비트하고 부름
+* 프로토콜이 ws로 변경
+* 데이터 보안을 위해 SSL을 적용한 프로그램 (wss)
+* Message : 여러 frame이 모여 구성하는 하나의 논리적 매시지 단위
+* frame : communication에서 가장 작은 단위의 데이터, **작은 헤더 + payload로 구성**
+* 웹소켓 통신에 사용되는 데이터는 UTF8 인코딩
+* Ex) 0x00 (보내고 싶은 데이터) 0xff
 
-- SYN, ACK 플래그가 사용됨
+## 6. 웹 소켓 동작 방법 - 프레임이란?
 
-![alt](/assets/images/post/ComputerStudy/1008.png)
+![alt](/assets/images/post/ComputerStudy/1024.png)
 
-- 클라이언트는 서버에게 접속을 요청하는 SYN 패킷을 보냄
-- 서버는 SYN 요청을 받고, 클라이언트에게 요청을 수락한다는 ACK, SYN 플래그가 설정된 패킷을 보냄
-- 클라이언트는 서버에게 다시 ACK를 보냄
-- 이제부터 연결이 이루어지고 데이터가 오가게 됨
+### 1) END 비트
 
-### 6) NAT (Network Address Translation)
+* 이 프렘이 전체 메세지의 끝인지 나타내는 플래그
 
-![alt](/assets/images/post/ComputerStudy/1009.png)
+### 2) Opcode 비트
 
-- 내가 사용하는 컴퓨터는 Private IP를 사용하고 있다.
-- Private IP는 외부에서 사용하는 IP주소를 찾지 못한다.
-- 그래서 공유기를 통해 나갈때 public ip로 주소를 변환하여 나가는 작업이 필요
-- 이러한 작업을 NAT 이라고 함
+* Continue (0x0) : 전체 메시지의 일부임을 의미
+* Text (0x1) : 포함된 데이터가 UTF-8 텍스트라는 의미
+* Binary (0x2) : 포함된 데이터가 이진 데이터라는 의미
+* Close (0x8) : Close 핸드쉐이크를 시작한다는 의미
 
-### 7) Routing
+### 3) Length 비트
 
-![alt](/assets/images/post/ComputerStudy/1010.png)
+* 이 프레임에 포함된 데이터의 총길이를 나타내는 단위
 
-- 구글 서버에 도착하기 위해 여러 라우터를 거쳐가야 함
+## 7. 웹 소켓 동작 방식 - 간단 정리
 
-### 8) ARP
+![alt](/assets/images/post/ComputerStudy/1025.png)
 
-![alt](/assets/images/post/ComputerStudy/1011.png)
+## 8. 웹 소켓 프로토콜 특징
 
-- 라우팅을 거쳐 구글 서버가 있는 곳까지 도달하게 되면
-- 패킷의 IP헤더에 기록된 구글 서버 IP 주소를 통해 MAC주소를 얻어와야 함
-- 라우터가 연결된 네트워크에 브로드캐스팅이 됨
+* 최초 접속에서만 http 프로토콜 위에서 handshaking을 하기 때문에 http header를 사용
+* 웹소켓을 위한 별도의 포트는 없으며, 기존 포트 (http - 80, https-443)을 사용
+* 프레임으로 구성된 메세지라는 논리적 단위로 송수신
+* 메세지에 포함될 수 있는 교환 가능한 메시지는 텍스트와 바이너리
 
-![alt](/assets/images/post/ComputerStudy/1012.png)
+## 9. 웹소켓 한계 - Socket.io, SockJS
 
-- 목적지 구글서버가 자신의 IP로 온 ARP 요청을 받고 MAC주소를 응답해줌
-- MAC주소를 알았으니 데이터가 물리적으로 전달 될 수 있음
+* HTML5 이전의 기술로 구현된 서비에스에서 웹 소켓처럼 사용할 수 있도록 도와주는 기술
+* Javascript를 이요하여 브라우저 종류에 상관없이 실시간 웹을 구현
+* WebSocket, FlashSocket, AJAX Long Pilling, AJAX Multi part Streaming, IFrame, JSONP Polling을 하나의 API로 추상화
+* **즉, 브라우저와 웹 서버의 종류와 버전을 파악하여 가장 적합한 기술을 선택하여 사용하는 방식**
 
-### 9) Transport Layer (Server)
+## 10. 웹소켓 한계 - STOMP
 
-- 포트번호 80이 적혀있다.
-- 이것을 보고 80번 포트를 사용하고 있는 애플리케이션에게 데이터를 전달해줘야 하는 것을 알 수 있음
+* WebSocket은 문자열들을 주고 받을 수 있게 해줄 뿐 그이상의 일 X
+* 주고 받은 문자열의 해독은 온전히 어플리케이션에 맡긴다.
+* HTTP는 형식을 정해두었기 때문에 모두가 약속을 따르기만 한다며 해석할 수 있다.
+* 하지만 WebSocket은 형식이 정해져 있지 않기 때문에 어플리케이션에서 쉽게 해석하기 힘들다.
+* 때문에 WebSocket방식은 Sub-protocols을 사용해서 주고 받는 메시지의 형태를 약속하는 경우가 많다.
 
-### 10) Application Layer (Server)
+### 1) STOMP (Simple Text Oriented Message Protocol)
 
-- 웹 서버가 사용될 HTTP Request 데이터를 얻을 수 있음
+* STOMP는 채팅 통신을 하기 위한 형식을 정의
+* HTTP와 유사하게 간단히 정의되어 해석하기 편한 프로토콜
+* 일반적으로 웹소켓 위에서 사용
 
-### 11) Routing (to Client)
+### 2) 프레임 구조
 
-- HTTP Request를 받고 응답을 돌려보냄
-- `"/"`에 매핑된 GET요청을 처리해서 적절한 HTML을 응답해줌
+![alt](/assets/images/post/ComputerStudy/1026.png)
 
-### 12) 4 - Way - Handshaking
-
-![alt](/assets/images/post/ComputerStudy/1013.png)
-
-- HTTP의 요청과 응답과정이 끝나면 연결을 종료해야 함
-- 여기서도 TCP 컨트롤 비트가 사용됨
-- ACK, FIN 플래그 사용
-
-![alt](/assets/images/post/ComputerStudy/1014.png)
-
-- 클라이언트가 서버로 연결을 종료 하겠다는 FIN 플래그를 전송
-- 서버는 클라이언트에게 ACK 메세지를 보내고 자신의 통신이 끝날 때 까지 기다림
-- 서버가 통신이 끝나면 클라이언트로 FIN을 보냄
-- 클라이언트는 확인했다는 의미로 서버에게 ACK을 보내면 연결이 종료됨
-
-![alt](/assets/images/post/ComputerStudy/1015.png)
-
-- 서버가 FIN을 보내는 과정에서 한가지 문제가 발생할 수 있음
-  - 서버가 FIN을 보내기 전에 보냈던 데이터가 FIN보다 늦게 도착할 경우 서버에게 FIN을 받았다고 클라이언트가 바로 연결된 소켓을 닫아버리면  
-    FIN을 보내기전에 보낸 패킷은 영영 클라이언트가 받을 수 없게 됨
-  - 그래서 클라이언트는 서버로부터 FIN 요청을 받더라도 일정시간동안 소켓을 닫지 않고 혹시나 아직 도착하지 않은 잉여 패킷을 기다림
-
-## 5. 신뢰할 수 있는 TCP
-
-![alt](/assets/images/post/ComputerStudy/1016.png)
-
-- 요즘 세상에 우리는 엄청나게 큰 데이터를 주고 받음
-- 그래서 한개의 패킷으로만 주고 받기에는 상당한 무리가 있음
-
-- 그래서 데이터를 잘게 쪼개서 보내게 되고 많은 패킷을 보내게 됨
-- 그리고 이많은 패킷은 엄청 복잡한 인터넷을 통해 목적지로 이동하게 됨
-- 이것을 가능하개 해주는게 신뢰할 수 잇는 프로토콜인 TCP 이다.
-
-- TCP는 흐름제어, 오류제어, 혼잡제어를 통해 신뢰성있는 데이터 전송을 보장
-
-## 출처
-
-<a href="https://www.youtube.com/watch?v=BEK354TRgZ8">수리의 TCP/IP</a>
+* 프레임 기반의 프로토콜이다
+* 프레임은 명령, 헤더, 바디로 구성된다.
+* 자주 사용되는 명령은 CONNECT, SED, SUBSCRIBE, DISCONNECT 등이 있다.
+* 헤더와 바디는 빈 라인으로 구분하여, 바디의 끝은 NULL 문자로 설정
