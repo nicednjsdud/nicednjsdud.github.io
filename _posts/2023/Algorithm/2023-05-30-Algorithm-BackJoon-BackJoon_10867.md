@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 1966 프린터 큐  (Java)
+title: BackJoon Algorithm 18111 마인크래프트 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/1899.png)
+![alt](/assets/images/post/Algorithm/18111.png)
 
 ## 풀이
 
