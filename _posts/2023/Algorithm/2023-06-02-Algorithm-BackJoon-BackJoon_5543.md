@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 6603 로또 (Java)
+title: BackJoon Algorithm 5543 상근날드 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-06-01 13:00:00 +0800"
+last_modified_at: "2023-06-02 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,62 +26,38 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/6603.png)
+![alt](/assets/images/post/Algorithm/5543.png)
 
 ## 풀이
 
 ```java
-import java.io.BufferedReader;
+iimport java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Arrays;
 
-public class Back_6603 {
-
-    static int arr[];
-    static boolean check[];
-
-    static int T;
-
+public class Back_5543 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-        while (true) {
-            st = new StringTokenizer(br.readLine());
-            T = Integer.parseInt(st.nextToken());
-            if (T == 0) {
-                break;
-            }
-            arr = new int[T];
-            check = new boolean[T];
-            for (int i = 0; i < T; i++) {
-                arr[i] = Integer.parseInt(st.nextToken());
-                check[i] = false;
-            }
-            dfs(0, 0);
-            System.out.println();
-        }
-    }
 
-    private static void dfs(int depth, int start) {
-        if (depth == 6) {
-            for (int i = 0; i < T; i++) {
-                if (check[i]) {
-                    System.out.print(arr[i] + " ");
-                }
-            }
-            System.out.println();
+        int hamburger[] = new int[3];
+        int drink[] = new int[2];
+
+        for (int i = 0; i < 3; i++) {
+            hamburger[i] = Integer.parseInt(br.readLine());
         }
-        for (int i = start; i < T; i++) {
-            check[i] = true;
-            dfs(depth + 1, i + 1);
-            check[i] = false;
+
+        for (int i = 0; i < 2; i++) {
+            drink[i] = Integer.parseInt(br.readLine());
         }
+        Arrays.sort(hamburger);
+        Arrays.sort(drink);
+
+        System.out.println(hamburger[0] + drink[0] - 50);
+        br.close();
     }
 }
-
-
 
 
 ```

@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 18111 마인크래프트 (Java)
+title: BackJoon Algorithm 10867 중복 빼고 정렬하기 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-05-29 13:00:00 +0800"
+last_modified_at: "2023-05-30 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/18111.png)
+![alt](/assets/images/post/Algorithm/10867.png)
 
 ## 풀이
 
@@ -34,62 +34,32 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.*;
 
-public class Back_18111 {
+public class Back_10867 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
-        int B = Integer.parseInt(st.nextToken());
-        int arr[][] = new int[N][M];
-        int max = 0;
-        int min = 0;
-        int height = 0;
-        int time = 99999999;
+        StringBuilder sb = new StringBuilder();
+        HashSet<Integer> hashSet = new HashSet<>();
         for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < M; j++) {
-                arr[i][j] = Integer.parseInt(st.nextToken());
-                if (i == 0 && j == 0) {
-                    min = arr[i][j];
-                    max = arr[i][j];
-                } else {
-                    if (arr[i][j] > max) {
-                        max = arr[i][j];
-                    } else if (arr[i][j] < min) {
-                        min = arr[i][j];
-                    }
-                }
-            }
+            hashSet.add(Integer.parseInt(st.nextToken()));
         }
-        for (int k = max; k >= min; k--) {
-            int current_time = 0;
-            int item = B;
 
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < M; j++) {
+        ArrayList<Integer> arr = new ArrayList<>(hashSet);
+        Collections.sort(arr);
 
-                    if (arr[i][j] > k) {
-                        item += (arr[i][j] - k);
-                        current_time += 2 * (arr[i][j] - k);
-                    } else if (arr[i][j] < k) {
-                        item -= (k - arr[i][j]);
-                        current_time += (k - arr[i][j]);
-                    }
-                }
-            }
-            if (item >= 0 && time > current_time) {
-                height = k;
-                time = current_time;
-            }
+        for (Integer integer : arr) {
+            sb.append(integer).append(" ");
         }
-        System.out.println(time + " " + height);
+        System.out.println(sb);
         br.close();
     }
 }
+
 
 
 ```
