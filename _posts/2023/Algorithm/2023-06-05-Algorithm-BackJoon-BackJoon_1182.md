@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 5430 AC (Java)
+title: BackJoon Algorithm 1182 부분 수열의 합 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/5430.png)
+![alt](/assets/images/post/Algorithm/1182.png)
 
 ## 풀이
 
@@ -34,62 +34,47 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Deque;
-import java.util.LinkedList;
+import java.util.StringTokenizer;
 
-public class Back_5430 {
+public class Back_1182 {
+
+    static int arr[];
+
+    static int count = 0;
+    static int N;
+    static int S;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int T = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        S = Integer.parseInt(st.nextToken());
+        arr = new int[N];
 
-        for (int i = 0; i < T; i++) {
-            String str = br.readLine();
-            int n = Integer.parseInt(br.readLine());
-
-            String arrStr = br.readLine();
-            Deque<Integer> deq = new LinkedList<>();
-            for (String s : arrStr.substring(1, arrStr.length() - 1).split(",")) {
-                if (!s.equals("")) {
-                    deq.add(Integer.valueOf(s));
-                }
-            }
-            System.out.println(ac(deq, str));
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
+        dfs(0, 0);
+        if (S == 0) {
+            System.out.println(count - 1);
+        } else {
+            System.out.println(count);
+        }
     }
 
-    private static String ac(Deque<Integer> deq, String commands) {
-        boolean reverse = false;
-
-        for (char command : commands.toCharArray()) {
-            if (command == 'R') {
-                // 뒤집기
-                reverse = !reverse;
-            } else {
-                if (deq.size() == 0) {
-                    return "error";
-                }
-                if (reverse) {
-                    deq.removeLast();
-                } else {
-                    deq.removeFirst();
-                }
+    private static void dfs(int index, int sum) {
+        if (index == N) {
+            if (sum == S) {
+                count++;
             }
-
+            return;
         }
-        StringBuilder sb = new StringBuilder("[");
-        while (!deq.isEmpty()) {
-            sb.append(reverse ? deq.removeLast() : deq.removeFirst());
-            if (deq.size() != 0) {
-                sb.append(",");
-            }
-        }
-        sb.append("]");
-        return sb.toString();
-
+        dfs(index + 1, sum + arr[index]);
+        dfs(index + 1, sum);
     }
 }
-
 
 
 ```
