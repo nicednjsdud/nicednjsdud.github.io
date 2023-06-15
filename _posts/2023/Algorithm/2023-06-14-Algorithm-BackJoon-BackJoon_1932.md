@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/2485.png)
+![alt](/assets/images/post/Algorithm/1932.png)
 
 ## 풀이
 
@@ -34,52 +34,46 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-public class Back_2485 {
+public class Back_1932 {
+
+    static int arr[][];
+    static Integer[][] dp;
+    static int n;
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        int arr[] = new int[N];
+        StringTokenizer st;
+        n = Integer.parseInt(br.readLine());
+        arr = new int[n][n];
+        dp = new Integer[n][n];
+        for (int i = 0; i < n; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < i + 1; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
 
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
-        }
-
-        // 각 가로수간의 거리 구하기
-        int dis[] = new int[N - 1];
-        for (int i = 0; i < dis.length; i++) {
-            dis[i] = arr[i + 1] - arr[i];
-        }
-
-        // 거리간의 최대 공약수 구하기
-        int gcd = 0;
-        gcd = gcd(dis[0], dis[1]);
-        for (int i = 2; i < N - 2; i++) {
-            gcd = gcd(gcd, dis[i]);
-            if (gcd == 1) {
-                break;
+                if (i == n -1) {
+                    // dp 맨밑줄 초기화
+                    dp[i][j] = arr[i][j];
+                }
             }
         }
-        // 각 거리/ 최대공약 -1값 모두 더하기
-        int sum = 0;
-        for (int i = 0; i < dis.length; i++) {
-            sum += ((dis[i] / gcd) - 1);
-        }
-        System.out.println(sum);
+        System.out.println(find(0,0));
         br.close();
     }
 
-    private static int gcd(int a, int b) {
-        while (b > 0) {
-            int temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
+    private static int find(int depth, int idx) {
+        if(depth == n -1) return dp[depth][idx];
 
+        if(dp[depth][idx] == null){
+            dp[depth][idx] = Math.max(find(depth+1, idx), find(depth+1,idx+1)) + arr[depth][idx];
+        }
+        return dp[depth][idx];
     }
 }
+
 
 
 ```
