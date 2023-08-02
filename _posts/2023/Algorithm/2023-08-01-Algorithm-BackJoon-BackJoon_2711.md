@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 소음 2935 (Java)
+title: BackJoon Algorithm 오타맨 고창영 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-07-31 13:00:00 +0800"
+last_modified_at: "2023-08-01 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/2935.png)
+![alt](/assets/images/post/Algorithm/2711.png)
 
 ## 풀이
 
@@ -34,20 +34,30 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
+import java.util.StringTokenizer;
 
-public class Back_2935 {
+public class Back_2711 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BigInteger A = new BigInteger(br.readLine());
-        String str = br.readLine();
-        BigInteger B = new BigInteger(br.readLine());
 
-        if (str.equals("*")) {
-            System.out.println(A.multiply(B));
-        } else {
-            System.out.println(A.add(B));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        int T = Integer.parseInt(br.readLine());
+        StringTokenizer st;
+
+        for (int i = 0; i < T; i++) {
+            st = new StringTokenizer(br.readLine());
+            int pos = Integer.parseInt(st.nextToken());
+            String str = st.nextToken();
+            String rebStr = "";
+
+            for (int j = 0; j < str.length(); j++) {
+                if(j != pos - 1){
+                    rebStr += str.charAt(j);
+                }
+            }
+            sb.append(rebStr).append("\n");
         }
+        System.out.println(sb);
         br.close();
     }
 }
