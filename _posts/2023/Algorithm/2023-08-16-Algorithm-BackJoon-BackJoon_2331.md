@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 순열 사이클 10451 (Java)
+title: BackJoon Algorithm 반복수열 2331 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/10451.png)
+![alt](/assets/images/post/Algorithm/2331.png)
 
 ## 풀이
 
@@ -34,49 +34,38 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class Back_10451 {
-
-    static int map[];
-    static boolean visited[];
-    static int cycle;
+public class Back_2331 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        StringTokenizer st;
-        int T = Integer.parseInt(br.readLine());
-        for (int i = 0; i < T; i++) {
-            int N = Integer.parseInt(br.readLine());
-            cycle = 0;
-            map = new int[N + 1];
-            st = new StringTokenizer(br.readLine());
-            for (int j = 1; j < N + 1; j++) {
-                map[j] = Integer.parseInt(st.nextToken());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int A = Integer.parseInt(st.nextToken());
+        int P = Integer.parseInt(st.nextToken());
+
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(A);
+
+        while (true) {
+            int num = arr.get(arr.size() - 1);
+            int result = 0;
+            while (num != 0) {
+                result += (int) Math.pow(num % 10, P);
+                num /= 10;
             }
-            visited = new boolean[N + 1];
-            for (int k = 1; k < N + 1; k++) {
-                if(!visited[k]){
-                    dfs(k);
-                    cycle++;
-                }
+
+            if(arr.contains(result)){
+                int ans = arr.indexOf(result);
+                System.out.println(ans);
+                break;
             }
-            sb.append(cycle).append("\n");
+            arr.add(result);
         }
-        System.out.println(sb);
         br.close();
-
-    }
-
-    private static void dfs(int start) {
-        visited[start] = true;
-
-        int next = map[start];
-        if(!visited[next]){
-            dfs(map[start]);
-        }
     }
 }
+
 
 ```
