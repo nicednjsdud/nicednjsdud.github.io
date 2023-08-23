@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 섬 4963 (Java)
+title: BackJoon Algorithm 숨바꼭질 1697 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-08-19 13:00:00 +0800"
+last_modified_at: "2023-08-20 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/4963.png)
+![alt](/assets/images/post/Algorithm/1697.png)
 
 ## 풀이
 
@@ -34,73 +34,54 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Back_4963 {
+public class Back_1697 {
 
-    static int arr[][];
-    static boolean visited[][];
-    static int dirX[] = {0, 0, -1, 1, -1, 1, -1, 1};
-    static int dirY[] = {-1, 1, 0, 0, 1, 1, -1, -1};
-
-    static int width, height;
+    static int N, K;
+    static int arr[];
+    static Queue<Integer> queue = new LinkedList<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        StringTokenizer st;
-
-        while (true) {
-            st = new StringTokenizer(br.readLine());
-            width = Integer.parseInt(st.nextToken());
-            height = Integer.parseInt(st.nextToken());
-            if (width == 0 && height == 0) {
-                break;
-            } else {
-
-                arr = new int[height][width];
-                visited = new boolean[height][width];
-
-                for (int i = 0; i < height; i++) {
-                    st = new StringTokenizer(br.readLine());
-                    for (int j = 0; j < width; j++) {
-                        arr[i][j] = Integer.parseInt(st.nextToken());
-                    }
-                }
-
-                int count = 0;
-
-                for (int i = 0; i < height; i++) {
-                    for (int j = 0; j < width; j++) {
-
-                        if (!visited[i][j] && arr[i][j] == 1) {
-                            count++;
-                            dfs(i, j);
-                        }
-                    }
-                }
-                sb.append(count).append("\n");
-            }
-        }
-        System.out.println(sb);
-        br.close();
-    }
-
-    private static void dfs(int x, int y) {
-        visited[x][y] = true;
-
-        for (int i = 0; i < 8; i++) {
-            int nowX = dirX[i] + x;
-            int nowY = dirY[i] + y;
-
-            if(nowX >=0 && nowY >=0 && nowX < height && nowY < width && !visited[nowX][nowY] && arr[nowX][nowY] == 1 ){
-                dfs(nowX,nowY);
-            }
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
+        if (N >= K) {
+            System.out.println(N - K);
+        } else {
+            System.out.println(bfs());
         }
     }
 
+    private static int bfs() {
+        arr = new int[100001];
+        queue.add(N);
+        arr[N] = 1;
+        while (!queue.isEmpty()) {
+            int x = queue.poll();
+            for (int i = 0; i < 3; i++) {
+                int nx;
+                if (i == 0) {
+                    nx = x + 1;
+                } else if (i == 1) {
+                    nx = x - 1;
+                } else {
+                    nx = x * 2;
+                }
+                if (nx == K) {
+                    return arr[x];
+                }
+                if (nx >= 0 && nx < arr.length && arr[nx] == 0) {
+                    arr[nx] = arr[x] + 1;
+                    queue.add(nx);
+                }
+            }
+        }
+        return 0;
+    }
 }
-
-
 
 ```
