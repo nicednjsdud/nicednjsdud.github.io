@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm Fridge of Your Dreams 11104 (Java)
+title: BackJoon Algorithm NN 11944 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -14,7 +14,7 @@ tag: BackJoon
 article_tag1: Algorithm
 article_section: Algorithm
 meta_keywords: BackJoon,Algorithm, java
-last_modified_at: "2023-08-28 13:00:00 +0800"
+last_modified_at: "2023-09-02 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -26,36 +26,34 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/11104.png)
+![alt](/assets/images/post/Algorithm/11944.png)
 
 ## 풀이
 
 ```java
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-public class Back_11104 {
+public class Back_11944 {
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
         StringBuilder sb = new StringBuilder();
-        int n = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
 
-        for (int i = 0; i < n; i++) {
-            long sum = 0;
-            long binary = 1;
-            String str = br.readLine();
-            for (int j = str.length() - 1; j >= 0; j--) {
-                if (str.charAt(j) == '1') {
-                    sum += binary;
-                }
-                binary *= 2;
-
-            }
-            sb.append(sum).append("\n");
+        for (int i = 0; i < N; i++) {
+            sb.append(N);
         }
-        System.out.println(sb);
+        if (sb.length() > M) {
+            System.out.println(sb.substring(0,M));
+        }
+        else{
+            System.out.println(sb);
+        }
         br.close();
     }
 }
