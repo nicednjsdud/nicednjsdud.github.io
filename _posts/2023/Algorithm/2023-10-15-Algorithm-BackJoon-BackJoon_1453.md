@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 아름다운 수 2774 (Java)
+title: BackJoon Algorithm 피시방 알바 1453 (Java)
 layout: single
 author_profile: true
 read_time: true
@@ -26,7 +26,7 @@ toc_label: 목차
 
 ## 문제
 
-![alt](/assets/images/post/Algorithm/2774.png)
+![alt](/assets/images/post/Algorithm/1453.png)
 
 ## 풀이
 
@@ -34,30 +34,31 @@ toc_label: 목차
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-public class Back_2774 {
+public class Back_1453 {
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int T = Integer.parseInt(br.readLine());
-        for (int i = 0; i < T; i++) {
-            String str = br.readLine();
-            boolean[] check = new boolean[11];
-            for (int j = 0; j < check.length; j++) {
-                check[j] = false;
-            }
-            int count = 0;
-            for (int j = 0; j < str.length(); j++) {
-                int num = Integer.parseInt(String.valueOf(str.charAt(j)));
-                if(check[num] == false){
-                    check[num] = true;
-                    count++;
-                }
-            }
-            System.out.println(count);
+        int N = Integer.parseInt(br.readLine());
+        int count = 0;
+        boolean[] check = new boolean[101];
+        for (int i = 0; i <= 100; i++) {
+            check[i] = false;
         }
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
+            int people = Integer.parseInt(st.nextToken());
+            if(!check[people]){
+                check[people] = true;
+            }
+            else{
+                count ++;
+            }
+        }
+        System.out.println(count);
         br.close();
     }
 }
+
 
 ```
