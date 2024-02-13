@@ -32,7 +32,6 @@ toc_label: 목차
 
 ### 1. Collections.binarySearch 를 이용한 풀이
 
-
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
