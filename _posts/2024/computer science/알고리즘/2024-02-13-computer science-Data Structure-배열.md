@@ -9,9 +9,9 @@ related: true
 categories:
   - Computer Science
 description: 바킹독의 실전 알고리즘 0x03강 ( 배열 )
-tag: Internet
-article_tag1: Internet
-article_section: Internet
+tag: BackJoon
+article_tag1: BackJoon
+article_section: BackJoon
 meta_keywords: CS50,computer,cs,자료구조
 last_modified_at: "2024-02-13 14:00:00 +0800"
 toc: true
