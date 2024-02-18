@@ -30,6 +30,8 @@ toc_label: 목차
 
 ## 풀이
 
+..
+
 ### 1. hasMoreTokens을 이용해 다음 토큰이 있는지 확인한다.
 
 ```java
