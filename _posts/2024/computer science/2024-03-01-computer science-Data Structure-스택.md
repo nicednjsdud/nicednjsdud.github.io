@@ -74,6 +74,8 @@ int main(void){
 }
 ```
 
+1
+
 ### 1) push 함수
 
 ![alt](/assets/images/post/ComputerStudy/1090.png)
