@@ -13,7 +13,7 @@ tag: BackJoon
 article_tag1: BackJoon
 article_section: BackJoon
 meta_keywords: CS50,computer,cs,자료구조
-last_modified_at: "2024-03-03 14:00:00 +0800"
+last_modified_at: "2024-03-02 14:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
