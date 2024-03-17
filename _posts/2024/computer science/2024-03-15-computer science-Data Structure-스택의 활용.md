@@ -88,4 +88,4 @@ toc_label: 목차
 
 ## 출처
 
-<a href="https://www.youtube.com/watch?v=cdjjk-ryPKc&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=9">[바킹독의 실전 알고리즘] 0x07강 - 덱</a>
+<a href="https://www.youtube.com/watch?v=cdjjk-ryPKc&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=9">[바킹독의 실전 알고리즘] 0x08강 - 스택의 활용</a>
