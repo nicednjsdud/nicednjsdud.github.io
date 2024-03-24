@@ -19,7 +19,7 @@ toc_sticky: true
 toc_label: 목차
 ---
 
-# 바킹독의 실전 알고리즘 0x09강 ( DFS )
+# 바킹독의 실전 알고리즘 0x0A강 ( DFS )
 
 ## 목차
 
@@ -45,3 +45,71 @@ toc_label: 목차
 4. 스택에 이 빌 때 까지 2번을 반복
 
 - 모든 칸이 스택에 1번씩 들어가므로 시간복잡도는 칸이 N개 일때 **O(N)**
+
+### 1) C
+
+```c
+#include <bits/stc++.h>
+using namespace std;
+#define X first
+#define Y second
+int board[502][502] = {...};
+bool vis[502][502];
+int n = 7, m = 10;
+int dx[4] = {1,0,-1,0};
+int dy[4] = {0,1,0,-1};
+
+int main(void){
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  stack<pair<int,int>> S;
+  vis[0][0] = 1;
+  S.push({0,0});
+
+  while(!s.empty()){
+    pair<int,int> cur = S.top(); S.pop();
+    cout << '(' << cur.X << ", " << cur.Y << ") -> ";
+    for(int dir = 0; dir < 4; dir ++){
+      int nX = cur.X + dx[dir];
+      int nY = cur.Y + dy[dir];
+
+      if(nX < 0 || nY < 0 || nX >= n || nY >= m ) continue;
+      if(vis[nX][nY] || board[nX][nY] != 1) continue;
+      vis[nX][nY] = 1;
+      S.push({nX,nY});
+    }
+  }
+}
+```
+
+## 3. BFS vs DFS
+
+### 1) BFS
+
+- 냇가에 던진 돌로 인해 동심원이 생기 듯이 퍼지는 것 처럼 상하좌우로 퍼짐
+- 거리 순으로 방문
+
+![alt](/assets/images/post/ComputerStudy/1107.png)
+
+### 2) DFS
+
+- 한 방향으로 막힐 때까지 쭉 직진
+
+![alt](/assets/images/post/ComputerStudy/1108.png)
+
+### 3) 정리
+
+![alt](/assets/images/post/ComputerStudy/1110.png)
+
+- BFS에서 유용하게 썻던 "현재 보는 칸으로부터의 수가되는 인접한 칸은 거리가 현재 보는 칸보다 1만큼 더 떨어져있다"는 성질은  
+  DFS에서는 성립하지 않음
+
+- 거리를 계산할때는 DFS를 사용할 수 없음
+
+1. 거리측정은 BFS
+2. Flood Fill은 아무거나 써도 상관 없음
+3. 그래프와 트리에서는 DFS를 씀
+
+## 출처
+
+<a href="https://www.youtube.com/watch?v=93jy2yUYfVE&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=11">[바킹독의 실전 알고리즘] 0x0A강 - DFS</a>
