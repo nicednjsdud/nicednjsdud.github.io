@@ -33,7 +33,7 @@ toc_label: 목차
 
 - 현재 상태에서 모든 후보군을 따라 들어가며 탐색하는 알고리즘
 
-## 2. 연습 문제 1 - N과 M
+## 2. 연습 문제
 
 ### 1) BOJ 15649번 : N과 M (1)
 
@@ -91,3 +91,116 @@ int main(void){
   func(0);
 }
 ```
+
+#### 1-2) Java
+
+<a href=""></a>
+
+### 2) BOJ 9663번 : N-Queen
+
+![alt](/assets/images/post/ComputerStudy/1117.png)
+
+#### 2-1) C
+
+```c
+
+#include <bits/stdc++.h>
+using namespace std;
+bool isused1[40];
+bool isused2[40];
+bool isused3[40];
+
+
+int cnt = 0;
+int n;
+// cur번째 행에 말을 배치할 예정
+void func(int cur){
+  if(cur == n){
+    cnt++;
+    return;
+  }
+  for(int i = 0; i < n; i++){
+      if( isused[i] || isused2[i + cur] || isused3[cur - i + n - 1]) continue;
+
+      isused1[i] = 1;
+      isused2[i+cur] = 1;
+      isused3[cur-i+n-1] = 1;
+      func(cur + 1);
+      iisused1[i] = 0;
+      isused2[i+cur] = 0;
+      isused3[cur-i+n-1] = 0;
+  }
+}
+
+int main(void){
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cin >> n
+  func(0);
+  cout << cnt;
+}
+```
+
+#### 2-2) Java
+
+- 풀 예정
+
+### 3) BOJ 1182번 : 부분수열의 합
+
+#### 3-1) C
+
+```c
+#include <bits/stdc++.h>
+using namespace std;
+
+int n, s;
+int arr[30];
+int cnt = 0;
+void func(int cur, int tot){
+  if(cur == n){
+    if(tot == s) cnt ++;
+    return;
+  }
+  func(cur+1, tot);
+  func(cur+1, tot + arr[cur] );
+}
+int main(void){
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cin >> n >> s;
+  for(int i = 0; i < n ; i++)
+    cin >> arr[i];
+  func(0,0);
+  if(s == 0) cnt--;
+  cout << cnt;
+}
+```
+
+## 3. STL next_permutation
+
+- 현재의 수열을 사전 순으로 생각했을 때의 다음 수열로 만들고 true를 반환하는 함수
+- 현재가 **1 2 3** 이면 next_permutation을 실행한 후 **1 3 2** 가 되고, **1 3 2**에서 next_permutation을  
+  실행하면 **2 1 3**이 된다.
+- 다음 수열이 존재하지 않는다면 false 반환
+
+```c
+int a[3] = {1 , 2, 3};
+do{
+    for(int i = 0; i< 3; i++)
+      count << a[i]
+    cout << '\n';
+}while(next_permutation(a, a + 3));
+
+/*
+123
+132
+213
+231
+312
+321
+*/
+```
+
+## 출처
+
+<a href="https://www.youtube.com/watch?v=8vDDJm5EewM&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=12">[바킹독의 실전 알고리즘] 0x0C강 - 재귀</a>
