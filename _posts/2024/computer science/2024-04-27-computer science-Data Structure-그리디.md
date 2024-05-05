@@ -190,6 +190,11 @@ int main(void){
 }
 ```
 
+#### 2) Java
+
+<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_1026/">BackJoon Algorithm 1026 보물 (Java)
+</a>
+
 ### 2) BOJ 12865번 : 평범한 배낭
 
 ### 3) BOJ 1477번 : 휴게소 세우기
