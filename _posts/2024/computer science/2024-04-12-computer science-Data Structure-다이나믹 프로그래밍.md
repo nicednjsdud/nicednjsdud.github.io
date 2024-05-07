@@ -249,6 +249,11 @@ int main(void){
 }
 ```
 
+#### 4-2) Java
+
+<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_1149/">BackJoon Algorithm RGB거리 11490 (Java)
+</a>
+
 ## 출처
 
 <a href="https://www.youtube.com/watch?v=5leTtB3PQu0&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=17">[바킹독의 실전 알고리즘] 0x10강 - 다이나믹 프로그래밍</a>
