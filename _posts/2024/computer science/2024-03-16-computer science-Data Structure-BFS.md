@@ -217,7 +217,8 @@ int main(void){
 
 - 입력을 받으면서 익은 토마토는 큐에 넣고, 익지 않은 토마토는 dist값을 -1로 둠
 
-<a href="">풀예정</a>
+<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_7576/">BackJoon Algorithm 토마토 7576 (Java)
+</a>
 
 #### 4-4) BOJ 4179 : 불 !
 
