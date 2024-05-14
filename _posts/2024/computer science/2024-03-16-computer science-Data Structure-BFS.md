@@ -226,7 +226,8 @@ int main(void){
 
 #### 4-5) BOJ 1697번 : 숨바꼭질
 
-<a href="">풀예정</a>
+<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_1697/">BackJoon Algorithm 숨바꼭질 1697 (Java)
+</a>
 
 ## 출처
 
