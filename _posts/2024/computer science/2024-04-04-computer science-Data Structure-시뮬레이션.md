@@ -28,7 +28,6 @@ toc_label: 목차
 - 0x02 연습 문제 3 - 2048 (Easy)
 - 0x03 연습 문제 4 - 치킨 배달
 
-
 ## 1. 연습 문제 1 - 감시 BOJ 15683
 
 1. 각 cctv의 방향 정하기
@@ -123,7 +122,13 @@ int main(void){
 
 ### 1-2) Java
 
-* 업로드 예정
+- 업로드 예정
 
 ## 2. 연습문제 2 - 스티커 붙이기 BOJ 18808
 
+## 3. 연습문제 3 - 2048 (EASY)
+
+## 4. 연습문제 4 - 치킨배달 BOJ 15686
+
+<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_15686/">BackJoon Algorithm 치킨 배달 15686 (Java)
+</a>
