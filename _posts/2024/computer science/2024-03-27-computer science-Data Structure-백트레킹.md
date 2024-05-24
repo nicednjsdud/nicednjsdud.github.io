@@ -176,6 +176,11 @@ int main(void){
 }
 ```
 
+#### 3-2) Java
+
+<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_1182/">BackJoon Algorithm 1182 부분 수열의 합 (Java)
+</a>
+
 ## 3. STL next_permutation
 
 - 현재의 수열을 사전 순으로 생각했을 때의 다음 수열로 만들고 true를 반환하는 함수
