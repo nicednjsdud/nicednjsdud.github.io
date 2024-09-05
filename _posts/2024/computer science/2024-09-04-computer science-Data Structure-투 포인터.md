@@ -1,5 +1,5 @@
 ---
-title: (알고리즘) 바킹독의 실전 알고리즘 Ox11강 ( 그리디 )
+title: (알고리즘) 바킹독의 실전 알고리즘 Ox14강 ( 투 포인터 )
 layout: single
 author_profile: true
 read_time: true
@@ -13,192 +13,150 @@ tag: BackJoon
 article_tag1: BackJoon
 article_section: BackJoon
 meta_keywords: CS50,computer,cs,자료구조
-last_modified_at: "2024-04-27 14:00:00 +0800"
+last_modified_at: "2024-09-04 14:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
 ---
 
-# 바킹독의 실전 알고리즘 0x11강 ( 그리디 )
+# 바킹독의 실전 알고리즘 0x14강 ( 투 포인터 )
 
 ## 목차
 
 - 0x00 알고리즘 설명
-- 0x01 연습 문제 1 - 동전 O
-- 0x02 연습 문제 2 - 회의실 배정
-- 0x03 연습 문제 3 - 로프
-- 0x04 연습 문제 4 - 보물
-- 0x05 잘못된 그리디
+- 0x01 연습 문제 1 - 수 고르기
+- 0x02 연습 문제 2 - 부분합
 
 ## 1. 알고리즘 설명
 
-- 지금 가장 최적인 답을 근시안적으로 택하는 알고리즘
-- 관찰을 통해 탐색 범위를 줄이는 알고리즘
+### 1) 투포인터
 
-### 1) 이상적인 풀이 흐름
+- 배열에서 원래 이중 for문으로 **O(N2)**에 처리되는 작업을 2개 포인터의 움직임으로 **O(N)**에 해결하는 알고리즘
 
-1. 관찰을 통해 탐색 범위를 줄이는 방법을 고안
-2. 탐색 범위를 줄여도 올바른 결과를 낸다는 사실을 수학적으로 증명
-3. 구현해서 문제를 통과
+## 2. 0x01 연습 문제 1 - 수 고르기
 
-### 2) 현실적인 풀이 흐름
+![alt](/assets/images/post/ComputerStudy/1131.png)
 
-1. 관찰을 통해 탐색 범위를 줄이는 방법을 고안
-2. 탐색 범위를 줄여도 올바른 결과를 낸다는 강한 믿음을 가짐
-3. 믿음을 가지고 구현해서 문제를 통과
+1. i가 증가함에 따라 `a[j] - a[i]`가 m 이상되는 최조의 지점 j 또한 증가
+2. 각 i에 대해 `a[j] - a[i]`가 m이상 되는 최초의 지점 j를 찾은 이후에는 `a[j+1].a[j+2], ...`을 확인할 필요가 없다.
 
-## 2. BOJ 11047번 : 동전 O
+### 1) 풀이
 
-- `D[i] = ` 가치의 합을 i로 만들때 필요한 동전 개수의 최솟값
-- `D[i] = min(D[i-A1], D[i-A2], ... , D[i-AN]) + 1` \
-  - 시간 초과 발생
+#### 1-1)
 
-### 1) 보조정리 1
+- 먼저 변수 st, en을 0에 둔다.
 
-- 동전을 최소로 소모하면서 물건값을 지불하려면 10/100원 동전은 4개이 하
-- 50원 동전은 1개 이하로 사용해야 한다.
+M = 6
+min = Infinity
 
-### 2) 증명
+![alt](/assets/images/post/ComputerStudy/1132.png)
 
-- 10/100원 동전을 5개 이상 사용 -> 50/500원 동전으로 대체
-- 50원 동전을 2개 이상 사용 -> 100원 동전으로 대체
+#### 1-2)
 
-### 3) 명제
+- `a[en] - a [st]`가 M이상이 될때 까지 옮긴다.
 
-- 동전을 최소로 소모하면서 물건값을 지불하려면 500원 동전을 최대한 많이 써야 한다.
+![alt](/assets/images/post/ComputerStudy/1133.png)
 
-### 4) 증명
+- min = 7로 갱신
 
-- 10,50,100원 동전으로는 물건값을 최대 10x4 + 50x1 + 100x4 = 490원만 감당 가능
-- 500원을 다 사용하지 않을 경우 10,50,100원 동전으로 500이상 감당해야함
+#### 1-3)
 
-### 5) C
+![alt](/assets/images/post/ComputerStudy/1134.png)
 
-```c
-#include <bits/stdc++.h>
-using namespace std;
+- 더이상 en을 늘릴필요가 없으니 st를 옮긴다.
+- st = 1일때 `a[en] - a[st]`가 m 이상이 되는 최조의 지점 en을 찾아야 하는데  
+  지금 en이 애초에 최초의 지점 이므로 min 갱신
+- min = 6
 
-int n, k;
-int a[15];
+#### 1-4)
 
-int main(void){
-   ios::sync_with_stdio(0);
-   cin.tie(0);
+- st =1 일때 해야할 것을 다했으니 다시 st를 오른쪽으로 이동
 
-   int ans = 0;
-   cin >> n >> k;
+![alt](/assets/images/post/ComputerStudy/1135.png)
 
-   for(int i = 0; i< n; i++) cin >> a[i];
-   for(int i = n-1 i > =0; i++){
-      ans += k / a[i];
-      k %= a[i];
-   }
-   cout << ans;
-}
-```
+- `a[en] - a[st]`가 m보다 작기 때문에 en을 옮김
 
-## 3. BOJ 1931번 : 회의실 배정
+#### 1-5)
 
-### 1) O(2^N)
+![alt](/assets/images/post/ComputerStudy/1136.png)
 
-- 모든 가능한 배정 방법을 확인
+- `a[en] - a[st]`가 아직 m보다 작기 때문에 en을 한번더 옮김
 
-### 2) O(N^2)
+#### 1-6)
 
-- 회의를 끝나는 시간이 빠른 순으로, 끝나는 시간이 같다면 시작 시간이 빠른 순으로 정렬
-- `D[i] = i`번째 회의를 마지막으로 진행했을 때 최대 회의의 수
-- `D[i] = max(D[j]) + 1` j번째 회의의 끝나는 시간이 i번째 회의의 시작 시간 이하인 모든 j
+![alt](/assets/images/post/ComputerStudy/1137.png)
 
-### 3) 명제
+- `a[en] - a[st]`이 m이상이 됨
+- 하지만 `a[en] - a[st]`가 min보다 크기 때문에 **min**의 갱신을 일어나지 않음
 
-![alt](/assets/images/post/ComputerStudy/1128.png)
-
-- 현재 시간이 t라고 할대 시작 시간이 t이상인 모든 회의 중에서 가장 먼저 끝나는 회의를 택하는 것이 최적해이다.
-
-### 4) 증명
-
-![alt](/assets/images/post/ComputerStudy/1129.png)
-
-- 회의 A대신 회의 B를 택했을 때 더 많은 회의를 배정할 수 있다고 가정
-
-### 5) 증명
-
-![alt](/assets/images/post/ComputerStudy/1130.png)
-
-- 회의 B대신 A를 사용해도 아무런 모순이 발생하지 않음
-
-### 6) C
+### 2) C
 
 ```c
 #include <bits/stdc++.h>
 using namespace std;
 
-int n;
-pair<int,int> s[1000005];
+int n, m;
+int a[100005];
+int mn = 0x7fffffff;
 
-int main(void){
-   ios::sync_with_stdio(0);
-   cin.tie(0);
-   cin >> n;
-   for(int i = 0; i< n; i++){
-      cin >> s[i].second >> s[i].first;
-   }
-   sort(s, s+n);
-   int ans = 0;
-   int t = 0;
-   for(int i = 0; i< n;i++){
-      if(t > s[i].second) continue;
-      ans ++;
-      t = s[i].first;
-   }
-   cout << ans;
+int main(){
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cin >> n >> m;
+  for(int i = 0; i < n; i++) cin >> a[i];
+  sort(a, a+n);
+  int en = 0;
+  for(int st = 0; st < n; st++){
+    while(en < n && a[en] - a[st] < m) en++;
+    if(en == n) break;
+    mn = min(mn, a[en] - a[st]);
+  }
+  cout << mn;
 }
 ```
 
-## 4. BOJ 2217번 : 로프
+### 3) JAVA
 
-### 1) Java
+- 풀예정
 
-<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_2217/">BackJoon Algorithm 로프 2217 (Java)
-</a>
+## 3. OxO2 연습 문제 2 - 부분합
 
-## 5. 잘못된 그리디
-
-### 1) BOJ 1026번 : 보물
-
-#### 1) C
+### 1) C
 
 ```c
 #include <bits/stdc++.h>
 using namespace std;
 
-int a[105], b[105];
-int n;
+int n, s, tot;
+int a[100005];
+int mn = 0x7fffffff;
 
-int main(void){
-   ios::sync_with_stdio(0);
-   cin.tie(0);
-   cin >> n;
-   for(int i = 0; i< n; i++) cin >> a[i];
-   for(int i = 0; i< n; i++) cin >> b[i];
-   sort(a, a+n);
-   sort(b, b+n);
-   int ans = 0;
-   for(int i = 0; i< n; i++)
-      ans += a[i] * b[n-1-i];
-   cout << ans;
+int main(){
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cin >> n >> s;
+  for(int i = 0; i< n; i++) cin >> a[i];
+  tot = a[0];
+  int en = 0;
+
+  for(int st = 0; st < n; st++){
+    while(en < n && tot < s){
+      en++;
+      if(en != n) tot += a[en];
+    }
+    if(en == n) break; // en이 범위를 벗어날 시 종료
+    mn = min(mn, en - st + 1);
+    tot -= a[st]
+  }
+  if(mn == 0x7fffffff) mn = 0;
+  cout << mn;
 }
 ```
 
-#### 2) Java
+### 2) JAVA
 
-<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_1026/">BackJoon Algorithm 1026 보물 (Java)
-</a>
-
-### 2) BOJ 12865번 : 평범한 배낭
-
-### 3) BOJ 1477번 : 휴게소 세우기
+- 풀예정
 
 ## 출처
 
-<a href="https://www.youtube.com/watch?v=5leTtB3PQu0&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=18">[바킹독의 실전 알고리즘] 0x11강 - 그리디</a>
+<a href="https://www.youtube.com/watch?v=I_0aAKzu0m8&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY">[바킹독의 실전 알고리즘] 0x14강 - 투 포인터 </a>
