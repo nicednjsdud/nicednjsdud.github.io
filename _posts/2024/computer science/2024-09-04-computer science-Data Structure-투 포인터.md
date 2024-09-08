@@ -117,7 +117,7 @@ int main(){
 
 ### 3) JAVA
 
-- 풀예정
+<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_2230/">BackJoon Algorithm 수고르기 2230 (Java)</a>
 
 ## 3. OxO2 연습 문제 2 - 부분합
 
