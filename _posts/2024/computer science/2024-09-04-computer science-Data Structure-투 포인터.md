@@ -155,7 +155,7 @@ int main(){
 
 ### 2) JAVA
 
-- 풀예정
+<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_1806/">BackJoon Algorithm 부분합 1806 (Java)</a>
 
 ## 출처
 
