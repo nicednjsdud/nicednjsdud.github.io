@@ -13,7 +13,7 @@ tag: Kotlin
 article_tag1: Kotlin
 article_section: Kotlin
 meta_keywords: Kotlin, Back_end
-last_modified_at: "2022-09-08 13:00:00 +0800"
+last_modified_at: "2024-09-08 13:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
