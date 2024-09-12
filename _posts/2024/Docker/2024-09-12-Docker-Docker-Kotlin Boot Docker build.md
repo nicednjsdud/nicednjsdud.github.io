@@ -66,51 +66,75 @@ CMD ["java", "-jar", "my-app-0.0.1-SNAPSHOT.jar"]
 <details>
   <summary>Dockerfile 분석</summary>
 
-#### 1-1) FROM gradle:7.5.1-jdk17 as builder
+```dockerfile
+FROM gradle:7.5.1-jdk17 as builder
+```
 
 - Gradle 7.5.1과 JDK 17이 포함된 이미지를 사용하여 빌드 환경을 구성
 
-#### 1-2) WORKDIR /home/gradle/src
+```dockerfile
+WORKDIR /home/gradle/src
+```
 
 - 컨테이너 내에서 작업할 디렉토리를 설정
 
-#### 2-1) COPY --chown=gradle:gradle . /home/gradle/src
+```dockerfile
+COPY --chown=gradle:gradle . /home/gradle/src
+```
 
 - 현재 디렉토리의 모든 파일을 /home/gradle/src로 복사, 소유자를 gradle 사용자로 설정
 
-#### 2-2) USER root
+```dockerfile
+USER root
+```
 
 - root 사용자로 변경하여 소유권 변경 작업을 수행
 
-#### 2-3) RUN chown -R gradle /home/gradle/src
+```dockerfile
+RUN chown -R gradle /home/gradle/src
+```
 
 - /home/gradle/src 디렉토리 및 하위 파일들의 소유자를 gradle로 변경
 
-#### 3-1) USER gradle
+```dockerfile
+USER gradle
+```
 
 - gradle 사용자로 변경
 
-#### 3-2) RUN gradle clean build
+```dockerfile
+RUN gradle clean build
+```
 
 - 프로젝트를 빌드
 
-#### 4-1) FROM openjdk:17
+```dockerfile
+FROM openjdk:17
+```
 
 - 빌드한 결과물을 실행하기 위한 가벼운 OpenJDK 17 이미지를 사용
 
-#### 4-2) CMD mkdir /app
+```dockerfile
+CMD mkdir /app
+```
 
 - /app 디렉토리를 생성 (JAR 파일을 복사할 목적)
 
-#### 5-1) COPY --from=builder /home/gradle/src/build/libs/\*.jar /app/
+```dockerfile
+COPY --from=builder /home/gradle/src/build/libs/\*.jar /app/
+```
 
 - 빌드한 JAR 파일을 /app 디렉토리로 복사
 
-#### 6-1) WORKDIR /app
+```dockerfile
+WORKDIR /app
+```
 
 - 컨테이너 내에서 /app 디렉토리를 작업 디렉토리로 설정
 
-#### 6-2) CMD ["java", "-jar", "my-app.jar"]
+```dockerfile
+CMD ["java", "-jar", "my-app.jar"]
+```
 
 - JAR 파일을 실행
 
