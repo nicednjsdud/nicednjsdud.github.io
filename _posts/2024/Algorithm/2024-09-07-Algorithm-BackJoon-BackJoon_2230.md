@@ -1,6 +1,6 @@
 ---
 published: true
-title: BackJoon Algorithm 수고르기 2230 (Java)
+title: BackJoon Algorithm 수고르기 2230 .(Java)
 layout: single
 author_profile: true
 read_time: true
