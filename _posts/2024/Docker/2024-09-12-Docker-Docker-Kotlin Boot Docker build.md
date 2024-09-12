@@ -63,9 +63,6 @@ CMD ["java", "-jar", "my-app-0.0.1-SNAPSHOT.jar"]
 
 ## 설명
 
-<details>
-  <summary>Dockerfile 분석</summary>
-
 ```dockerfile
 FROM gradle:7.5.1-jdk17 as builder
 ```
@@ -137,8 +134,6 @@ CMD ["java", "-jar", "my-app.jar"]
 ```
 
 - JAR 파일을 실행
-
-</details>
 
 ## 2. Docker 이미지 빌드
 
