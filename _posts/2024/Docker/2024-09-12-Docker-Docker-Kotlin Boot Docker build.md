@@ -109,7 +109,7 @@ RUN gradle clean build
 FROM openjdk:17
 ```
 
-- 빌드한 결과물을 실행하기 위한 가벼운 OpenJDK 17 이미지를 사용
+- 빌드한 결과물을 실행하기 위한 OpenJDK 17 이미지를 사용
 
 ```dockerfile
 CMD mkdir /app
