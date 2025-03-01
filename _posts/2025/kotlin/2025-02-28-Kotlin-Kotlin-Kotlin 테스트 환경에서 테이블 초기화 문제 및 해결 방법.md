@@ -46,7 +46,7 @@ fun setUp() {
     userRepository = UserRepository(database)
 }
 
---- userServiceTest.calss
+--- userServiceTest.class
 
 @BeforeAll
 fun setUp() {
