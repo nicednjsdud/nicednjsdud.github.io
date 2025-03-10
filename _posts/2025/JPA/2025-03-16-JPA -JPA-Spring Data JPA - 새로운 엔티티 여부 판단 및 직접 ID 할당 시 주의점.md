@@ -192,9 +192,6 @@ public boolean isNew(T entity) {
 
 ---
 
-**💡 더 좋은 방법이 있다면 댓글로 공유해주세요! 😊**  
-📌 **이제 이걸 그대로 복사해서 블로그에 붙여넣으면 마크다운 형식으로 정리됩니다.** 🚀
-
 ## 출처
 
 <a href="https://www.maeil-mail.kr/question/27">매일메일 : Spring Data JPA에서 새로운 Entity인지 판단하는 방법은 무엇일까요?</a>
