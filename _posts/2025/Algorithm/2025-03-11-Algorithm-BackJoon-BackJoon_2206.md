@@ -227,7 +227,7 @@ public class Back_2206 {
         System.out.println(bfs(map));
     }
 
-    private static int bfs(char[][] map) {
+     private static int bfs(char[][] map) {
         Queue<Point> points = new LinkedList<>();
         points.offer(new Point(0, 0, 1, false));
         boolean[][][] visited = new boolean[N][M][2];
@@ -245,4 +245,26 @@ public class Back_2206 {
                 int dirY = now.y + dY[i];
 
                 if (dirX >= N || dirX < 0 || dirY >= M || dirY < 0) continue;
+
+                if (map[dirX][dirY] == '0') {
+                    if (!now.destroyed && !visited[dirX][dirY][0]) {
+                        points.offer(new Point(dirX, dirY, now.count + 1, false));
+                        visited[dirX][dirY][0] = true;
+                    } else if (now.destroyed && !visited[dirX][dirY][1]) {
+                        points.offer(new Point(dirX, dirY, now.count + 1, true));
+                        visited[dirX][dirY][1] = true;
+                    }
+                } else if (map[dirX][dirY] == '1') {
+                    if (!now.destroyed) {
+                        points.offer(new Point(dirX, dirY, now.count + 1, true));
+                        visited[dirX][dirY][1] = true;
+                    }
+                }
+            }
+        }
+
+
+        return -1;
+    }
+}
 ```
