@@ -1,6 +1,6 @@
 ---
 published: true
-title: "🔍 백준 15654번 - N과 M (5) | DFS 순열 로직 완전 정복"
+title: "🔍 백준 15654번 - N과 M (5)"
 layout: single
 author_profile: true
 read_time: true

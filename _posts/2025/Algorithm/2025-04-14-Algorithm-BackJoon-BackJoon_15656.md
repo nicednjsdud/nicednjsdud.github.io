@@ -1,6 +1,6 @@
 ---
 published: true
-title: "🔢 백준 15656번 - N과 M (7) | 중복 순열 DFS 흐름 완전 분석"
+title: "🔢 백준 15656번 - N과 M (7)"
 layout: single
 author_profile: true
 read_time: true
