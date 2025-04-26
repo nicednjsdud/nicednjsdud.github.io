@@ -9,7 +9,6 @@ share: true
 related: true
 categories:
   - Algorithm
-  - BFS
 description: "백준 5472번 불! (BFS)를 활용한 최단 시간 탈출 문제 해결 및 오류 분석"
 tag: "BFS, Java, Algorithm, Queue, Fire Escape"
 article_tag1: "BFS"

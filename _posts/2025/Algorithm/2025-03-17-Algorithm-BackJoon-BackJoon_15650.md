@@ -9,8 +9,6 @@ share: true
 related: true
 categories:
   - Algorithm
-  - DFS
-  - Backtracking
 description: "백준 15650번 - N과 M (2) 문제의 DFS(백트래킹) 풀이 및 핵심 개념 정리"
 tag: "DFS, 백트래킹, 조합, Algorithm, Java"
 article_tag1: "DFS"

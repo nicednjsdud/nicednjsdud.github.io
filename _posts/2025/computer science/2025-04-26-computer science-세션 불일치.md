@@ -8,9 +8,7 @@ comments: true
 share: true
 related: true
 categories:
-  - Backend
-  - Server
-  - 인증/보안
+  - Computer Science
 description: "다중 서버 환경에서 세션 기반 인증 시 발생하는 세션 불일치 문제와 이를 해결하는 스티키 세션, 세션 클러스터링, 스토리지 분리 방식에 대해 실용적으로 정리했습니다."
 tag: "세션, 세션 클러스터링, 백엔드, 로드밸런싱, 인증"
 article_tag1: "세션 관리"

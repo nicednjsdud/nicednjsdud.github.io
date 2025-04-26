@@ -8,9 +8,7 @@ comments: true
 share: true
 related: true
 categories:
-  - Spring
   - JPA
-  - Hibernate
 description: "Spring Data JPA에서 새로운 엔티티 여부를 판단하는 방법과 직접 ID 할당 시 발생할 수 있는 문제점 및 해결 방법"
 tag: "Spring, JPA, Hibernate, Persistable, 엔티티 관리"
 article_tag1: "Spring"

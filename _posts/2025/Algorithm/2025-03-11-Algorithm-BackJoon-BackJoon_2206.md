@@ -9,7 +9,6 @@ share: true
 related: true
 categories:
   - Algorithm
-  - BFS
 description: "백준 2206번 벽 부수고 이동하기 (BFS)를 활용한 최단 거리 탐색"
 tag: "BFS, Java, Algorithm, Queue, 벽 부수고 이동"
 article_tag1: "BFS"

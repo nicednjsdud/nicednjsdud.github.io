@@ -9,7 +9,6 @@ share: true
 related: true
 categories:
   - Algorithm
-  - Backtracking
 description: "백준 15652번 N과 M (4) 문제의 Java 풀이. 중복 조합을 DFS로 해결하는 방법과 핵심 포인트를 정리"
 tag: "백준, Java, DFS, 중복 조합"
 article_tag1: "백트래킹"

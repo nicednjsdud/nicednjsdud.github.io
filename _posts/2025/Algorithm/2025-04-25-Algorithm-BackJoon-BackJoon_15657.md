@@ -9,8 +9,6 @@ share: true
 related: true
 categories:
   - Algorithm
-  - Backtracking
-  - Java
 description: "DFS 백트래킹이 어렵다면 트리로 흐름을 시각화해보자! 백준 15657번 문제를 예제로 DFS 흐름을 트리로 따라가 봅니다."
 tag: "백준, DFS, 중복조합, Java, 트리로이해하기"
 article_tag1: "DFS 트리"

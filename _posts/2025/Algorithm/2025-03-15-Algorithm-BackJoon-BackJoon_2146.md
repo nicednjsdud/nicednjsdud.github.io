@@ -9,7 +9,6 @@ share: true
 related: true
 categories:
   - Algorithm
-  - BFS
 description: "백준 2146번 다리 만들기 (BFS)를 활용한 최단 다리 찾기 문제 해결"
 tag: "BFS, Java, Algorithm, Queue, 다리 만들기"
 article_tag1: "BFS"

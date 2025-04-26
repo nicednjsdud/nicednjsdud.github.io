@@ -9,8 +9,6 @@ share: true
 related: true
 categories:
   - Algorithm
-  - DFS
-  - Backtracking
 description: "백준 15651번 - N과 M (3) 문제의 DFS(백트래킹) 풀이 및 실행 과정 상세 분석"
 tag: "DFS, 백트래킹, 중복 순열, Algorithm, Java"
 article_tag1: "DFS"

@@ -8,9 +8,7 @@ comments: true
 share: true
 related: true
 categories:
-  - Backend
-  - Network
-  - Security
+  - Computer Science
 description: "HTTP와 HTTPS의 차이, 그리고 HTTPS가 어떻게 동작하는지 백엔드 개발자 시선에서 정리합니다."
 tag: "HTTPS, TLS, 보안, 백엔드, 암호화 통신"
 article_tag1: "HTTPS"

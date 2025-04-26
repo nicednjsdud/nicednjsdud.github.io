@@ -9,8 +9,6 @@ share: true
 related: true
 categories:
   - Kotlin
-  - Ktor
-  - Config
 description: "Ktor에서 application.yaml 파일을 HoconApplicationConfig로 읽지 못할 때의 원인과 .conf(HOCON) 포맷을 활용한 해결 방법"
 tag: "Kotlin, Ktor, Config, HOCON, YAML"
 article_tag1: "Kotlin"

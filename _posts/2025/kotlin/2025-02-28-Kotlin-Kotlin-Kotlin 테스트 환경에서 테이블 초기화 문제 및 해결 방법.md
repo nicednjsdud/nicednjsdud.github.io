@@ -9,7 +9,6 @@ share: true
 related: true
 categories:
   - Kotlin
-  - Testing
 description: "Kotlin과 Exposed를 사용한 테스트 환경에서 테이블 초기화 문제 해결 방법"
 tag: "Kotlin, Testing, Exposed, Database"
 article_tag1: "Kotlin"

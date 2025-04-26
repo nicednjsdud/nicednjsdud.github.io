@@ -9,8 +9,6 @@ share: true
 related: true
 categories:
   - Algorithm
-  - DFS
-  - Java
 description: "백준 15654번 - N과 M (5) 문제를 DFS로 하나하나 직접 따라가며 완벽히 이해하는 순열 생성 과정 정리"
 tag: "백준, DFS, 순열, 백트래킹, Java"
 article_tag1: "DFS"

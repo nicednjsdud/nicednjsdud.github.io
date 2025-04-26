@@ -9,8 +9,6 @@ share: true
 related: true
 categories:
   - Algorithm
-  - Backtracking
-  - Java
 description: "백준 15655번 문제를 풀며 순열과 조합을 구분하는 핵심 포인트와 잘못된 풀이를 분석합니다."
 tag: "백준, Java, DFS, 조합, 백트래킹"
 article_tag1: "Backtracking"

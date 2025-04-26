@@ -9,8 +9,6 @@ share: true
 related: true
 categories:
   - Kotlin
-  - Testing
-  - Exposed
 description: "Kotlin 테스트 환경에서 FK(외래 키) 문제로 인해 발생한 오류를 해결하고 테이블 초기화 방식을 개선한 방법"
 tag: "Kotlin, Testing, Exposed, Database, FK 문제 해결"
 article_tag1: "Kotlin"

@@ -9,8 +9,6 @@ share: true
 related: true
 categories:
   - Algorithm
-  - Backtracking
-  - Java
 description: "백준 15656번 문제에서 DFS 재귀 호출이 어떻게 작동하는지, 예제와 함께 완전히 시각화해서 정리합니다."
 tag: "백준, 중복순열, DFS, 백트래킹, Java"
 article_tag1: "중복순열"

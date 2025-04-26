@@ -9,8 +9,6 @@ share: true
 related: true
 categories:
   - Backend
-  - OOP
-  - CleanCode
 description: "객체지향 설계의 핵심 SOLID 원칙을 이해하고, 각 원칙별로 간단한 리팩토링 전/후 예제를 통해 바로 적용할 수 있게 정리했습니다."
 tag: "SOLID, 객체지향, 백엔드, 리팩토링, 클린코드"
 article_tag1: "SOLID"
