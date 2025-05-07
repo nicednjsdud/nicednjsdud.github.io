@@ -8,9 +8,7 @@ comments: true
 share: true
 related: true
 categories:
-  - Backend
-  - System
-  - Spring
+  - Computer Science
 description: "동시성과 병렬성의 개념을 쉽게 정리하고, Spring에서 비동기/병렬 아키텍처를 실제로 어떻게 구성하는지 도식과 함께 정리했습니다."
 tag: "동시성, 병렬성, 비동기, 병렬 처리, 스프링"
 article_tag1: "Concurrency vs Parallelism"
