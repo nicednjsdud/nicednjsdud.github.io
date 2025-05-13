@@ -20,10 +20,6 @@ toc_sticky: true
 toc_label: "목차"
 ---
 
-# 🌐 REST API란 무엇인가? 그리고 SOAP, Modbus와의 비교
-
----
-
 ## ✅ REST란?
 
 > REST(Representational State Transfer)란 **자원의 표현을 이용해 상태를 주고받는 아키텍처 스타일**입니다.
