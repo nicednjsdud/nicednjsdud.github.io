@@ -1,5 +1,5 @@
 # 기본 설명 https://mmistakes.github.io/minimal-mistakes/docs/configuration/
-minimal_mistakes_skin    : "aqua" # 태마 색 설정 "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise" 
+minimal_mistakes_skin    : "air" # 태마 색 설정 "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise" 
 
 # Site Settings
 locale                   : "ko-KR"
@@ -103,7 +103,7 @@ author:
   avatar           : "/assets/images/profile/1.jfif" # 프로필 이미지
   bio              : "항상 배우고 싶은 개발자입니다."
   location         : "Republic of Korea"
-  email            : "nicednjsdud@naver.com"
+  email            : "nicednjsdud@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
