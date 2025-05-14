@@ -1,6 +1,6 @@
 ---
 published: true
-title: "🖥️ 다중 서버 환경에서 세션 기반 인증 문제와 해결 방법 총정리"
+title: "🖥️ 다중 서버 환경에서 세션 기반 인증 문제와 해결 방법"
 layout: single
 author_profile: true
 read_time: true
@@ -18,10 +18,6 @@ last_modified_at: "2025-04-26 22:35:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: "목차"
----
-
-# 🖥️ 다중 서버 환경에서 세션 기반 인증 문제와 해결 방법 총정리
-
 ---
 
 ## 📌 문제 상황: 세션 불일치(Session Mismatch)

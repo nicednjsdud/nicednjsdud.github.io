@@ -20,10 +20,6 @@ toc_sticky: true
 toc_label: "목차"
 ---
 
-# 🔐 HTTPS란? 백엔드를 위한 암호화 통신의 기본 개념과 원리
-
----
-
 ## 🌐 HTTP란?
 
 > **HTTP (Hypertext Transfer Protocol)**  
