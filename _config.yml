@@ -7,7 +7,7 @@ title                    : "배고픈 개발자" # Meta 태그에 들어가는 �
 title_separator          : "&#124;" # 타이틀 사이 구분자 <title>Welcome to Jekyll | Minimal Mistakes</title> 해당 형식으로 들어갑니다.
 subtitle                 : "Version 1.0" # 타이틀 아래에 나올 작은 글씨 
 name                     : "정원영" # 맨 하단 이름 찍히는 영역
-description              : "JAVA와 Spring Boot" # Meta 태그에 들어가는 영역 
+description              : "개발 지식과 알고리즘 문제 풀이를 공유하는 블로그" # Meta 태그에 들어가는 영역 
 url                      : "https://nicednjsdud.github.io" # GitBlog 호스트 주소
 baseurl                  : # subPath https://7271kim.github.io/blog라고 하고 싶을 시 "/blog" 라고 적는다.
 repository               : "nicednjsdud/nicednjsdud.github.com" # GitHub username/repo-name  
