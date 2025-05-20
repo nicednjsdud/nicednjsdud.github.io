@@ -25,7 +25,7 @@ toc_label: "목차"
 > **캐시 스탬피드(Cache Stampede)** 또는 **Thundering Herd Problem**은  
 > 캐시 미스 시 **다수의 요청이 동시에 원본 저장소(DB)** 를 조회하여 **병목**이 발생하는 현상입니다.
 
-![alt](/assets/images/post/computer science/1.png)
+![alt](/assets/images/post/computer science/2.png)
 
 위 그림처럼 여러 사용자가 동시에 요청을 보내고, 해당 캐시 키가 만료되어 있는 경우,  
 모든 요청이 동시에 DB로 몰리는 현상이 발생합니다.  
