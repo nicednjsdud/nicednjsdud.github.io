@@ -20,9 +20,6 @@ toc_sticky: true
 toc_label: "목차"
 ---
 
-# 🌐 IGP vs EGP, 그리고 AS란 무엇인가요?
-
----
 
 ## 🔍 AS(Autonomous System)란?
 
