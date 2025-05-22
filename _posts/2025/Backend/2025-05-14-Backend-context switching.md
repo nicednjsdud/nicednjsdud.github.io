@@ -8,7 +8,7 @@ comments: true
 share: true
 related: true
 categories:
-  - Computer Science
+  - Backend
 description: "컨텍스트 스위칭은 OS와 CPU가 여러 작업을 동시에 처리하기 위해 필수적인 개념입니다. 프로세스/스레드 간 스위칭이 어떻게 동작하는지, 그리고 왜 스레드 스위칭이 더 빠른지까지 완전히 이해해 봅니다."
 tag: "Context Switching, 스레드, 프로세스, 커널, MMU, TLB"
 article_tag1: "운영체제 핵심 개념"

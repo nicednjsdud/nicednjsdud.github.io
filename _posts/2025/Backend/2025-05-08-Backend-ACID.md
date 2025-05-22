@@ -8,7 +8,7 @@ comments: true
 share: true
 related: true
 categories:
-  - Computer Science
+  - Backend
 description: "ACID는 트랜잭션의 4대 속성으로, 데이터베이스가 신뢰성 있게 동작하기 위한 핵심 원칙입니다. 실무 상황과 함께 하나씩 깊이 있게 정리해보았습니다."
 tag: "ACID, Database, Transaction, 트랜잭션, 일관성"
 article_tag1: "트랜잭션 속성"

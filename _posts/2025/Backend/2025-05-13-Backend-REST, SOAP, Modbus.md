@@ -8,7 +8,7 @@ comments: true
 share: true
 related: true
 categories:
-  - Computer Science
+  - Backend
 description: "REST의 기본 개념부터 장단점, 실무에서 어떻게 사용되는지 그리고 SOAP, GraphQL, Modbus와 어떤 차이가 있는지를 쉽게 정리했습니다."
 tag: "REST, API, SOAP, Modbus, 통신 프로토콜"
 article_tag1: "REST API"

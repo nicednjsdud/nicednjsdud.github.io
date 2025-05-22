@@ -8,7 +8,7 @@ comments: true
 share: true
 related: true
 categories:
-  - Computer Science
+  - Backend
 description: "IGP와 EGP는 라우팅 프로토콜의 두 축입니다. 각각의 개념과 Autonomous System(AS)의 역할을 이미지와 함께 정리해봅니다."
 tag: "IGP, EGP"
 article_tag1: "Network"
