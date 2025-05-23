@@ -13,7 +13,7 @@ tag: BackJoon
 article_tag1: BackJoon
 article_section: BackJoon
 meta_keywords: CS50,computer,cs,자료구조
-last_modified_at: "2024-09-04 14:00:00 +0800"
+last_modified_at: "2025-05-23 14:00:00 +0800"
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -21,77 +21,70 @@ toc_label: 목차
 
 # 바킹독의 실전 알고리즘 0x14강 ( 투 포인터 )
 
-## 목차
+## 📌 목차
 
-- 0x00 알고리즘 설명
-- 0x01 연습 문제 1 - 수 고르기
-- 0x02 연습 문제 2 - 부분합
+- [0x00 알고리즘 설명](#0x00-알고리즘-설명)
+- [0x01 연습 문제 1 - 수 고르기](#0x01-연습-문제-1---수-고르기)
+- [0x02 연습 문제 2 - 부분합](#0x02-연습-문제-2---부분합)
 
-## 1. 알고리즘 설명
+## 🔍 0x00 알고리즘 설명
 
-### 1) 투포인터
+### 🧠 투 포인터란?
 
-- 배열에서 원래 이중 for문으로 **O(N2)**에 처리되는 작업을 2개 포인터의 움직임으로 **O(N)**에 해결하는 알고리즘
+> **O(N²)** 복잡도를 가지는 문제를 **O(N)**으로 줄이는 대표적인 테크닉!
 
-## 2. 0x01 연습 문제 1 - 수 고르기
+- 배열의 두 지점을 가리키는 **start**, **end** 포인터를 사용해 슬라이딩 윈도우를 구성
+- 조건을 만족할 때까지 포인터를 움직이며 해를 구하는 방식
 
-![alt](/assets/images/post/ComputerStudy/1131.png)
+## 🧪 0x01 연습 문제 1 - 수 고르기 ([백준 2230번](https://www.acmicpc.net/problem/2230))
 
-1. i가 증가함에 따라 `a[j] - a[i]`가 m 이상되는 최조의 지점 j 또한 증가
-2. 각 i에 대해 `a[j] - a[i]`가 m이상 되는 최초의 지점 j를 찾은 이후에는 `a[j+1].a[j+2], ...`을 확인할 필요가 없다.
+![수 고르기 흐름](/assets/images/post/ComputerStudy/1131.png)
 
-### 1) 풀이
+### 🚩 핵심 아이디어
 
-#### 1-1)
+- 배열 정렬 후, `a[en] - a[st]`가 M 이상이 되는 **최초의 지점 en**을 찾는다.
+- 이 이후부터는 더 확인할 필요 없음!
 
-- 먼저 변수 st, en을 0에 둔다.
+### 🎯 시각적 풀이 과정
 
+#### ✅ 초기 상태
+
+```plaintext
 M = 6
-min = Infinity
+min = INF
+st = 0, en = 0
+```
 
-![alt](/assets/images/post/ComputerStudy/1132.png)
+![1132](/assets/images/post/ComputerStudy/1132.png)
 
-#### 1-2)
+#### ➡️ en 이동
 
-- `a[en] - a [st]`가 M이상이 될때 까지 옮긴다.
+`a[en] - a[st] < M`이므로 `en++`
 
-![alt](/assets/images/post/ComputerStudy/1133.png)
+![1133](/assets/images/post/ComputerStudy/1133.png)
 
-- min = 7로 갱신
+#### ✅ 갱신
 
-#### 1-3)
+- 차이가 M 이상이 되었으므로 `min = 7`
 
-![alt](/assets/images/post/ComputerStudy/1134.png)
+![1134](/assets/images/post/ComputerStudy/1134.png)
 
-- 더이상 en을 늘릴필요가 없으니 st를 옮긴다.
-- st = 1일때 `a[en] - a[st]`가 m 이상이 되는 최조의 지점 en을 찾아야 하는데  
-  지금 en이 애초에 최초의 지점 이므로 min 갱신
-- min = 6
+#### ⏩ st 이동
 
-#### 1-4)
+- 현재 en이 최초 지점이라 `min = 6`으로 갱신
 
-- st =1 일때 해야할 것을 다했으니 다시 st를 오른쪽으로 이동
+![1135](/assets/images/post/ComputerStudy/1135.png)
 
-![alt](/assets/images/post/ComputerStudy/1135.png)
+#### 🔁 다시 en 이동
 
-- `a[en] - a[st]`가 m보다 작기 때문에 en을 옮김
+- 차이가 M보다 작으면 en 계속 증가
 
-#### 1-5)
+![1136](/assets/images/post/ComputerStudy/1136.png)  
+![1137](/assets/images/post/ComputerStudy/1137.png)
 
-![alt](/assets/images/post/ComputerStudy/1136.png)
+### 🧾 C++ 코드
 
-- `a[en] - a[st]`가 아직 m보다 작기 때문에 en을 한번더 옮김
-
-#### 1-6)
-
-![alt](/assets/images/post/ComputerStudy/1137.png)
-
-- `a[en] - a[st]`이 m이상이 됨
-- 하지만 `a[en] - a[st]`가 min보다 크기 때문에 **min**의 갱신을 일어나지 않음
-
-### 2) C
-
-```c
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -100,8 +93,7 @@ int a[100005];
 int mn = 0x7fffffff;
 
 int main(){
-  ios::sync_with_stdio(0);
-  cin.tie(0);
+  ios::sync_with_stdio(0); cin.tie(0);
   cin >> n >> m;
   for(int i = 0; i < n; i++) cin >> a[i];
   sort(a, a+n);
@@ -115,15 +107,19 @@ int main(){
 }
 ```
 
-### 3) JAVA
+### ☕ Java 풀이 블로그
 
-<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_2230/">BackJoon Algorithm 수고르기 2230 (Java)</a>
+🔗 [BackJoon 2230 수 고르기 (Java)](https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_2230/)
 
-## 3. OxO2 연습 문제 2 - 부분합
+## 💡 0x02 연습 문제 2 - 부분합 ([백준 1806번](https://www.acmicpc.net/problem/1806))
 
-### 1) C
+### ✅ 핵심 아이디어
 
-```c
+- 누적합을 투 포인터로 유지하면서 합이 S 이상인 최소 구간 찾기
+
+### 🧾 C++ 코드
+
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -132,10 +128,10 @@ int a[100005];
 int mn = 0x7fffffff;
 
 int main(){
-  ios::sync_with_stdio(0);
-  cin.tie(0);
+  ios::sync_with_stdio(0); cin.tie(0);
   cin >> n >> s;
-  for(int i = 0; i< n; i++) cin >> a[i];
+  for(int i = 0; i < n; i++) cin >> a[i];
+
   tot = a[0];
   int en = 0;
 
@@ -144,19 +140,28 @@ int main(){
       en++;
       if(en != n) tot += a[en];
     }
-    if(en == n) break; // en이 범위를 벗어날 시 종료
+    if(en == n) break;
     mn = min(mn, en - st + 1);
-    tot -= a[st]
+    tot -= a[st];
   }
   if(mn == 0x7fffffff) mn = 0;
   cout << mn;
 }
 ```
 
-### 2) JAVA
+### ☕ Java 풀이 블로그
 
-<a href="https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_1806/">BackJoon Algorithm 부분합 1806 (Java)</a>
+🔗 [BackJoon 1806 부분합 (Java)](https://nicednjsdud.github.io/algorithm/Algorithm-BackJoon-BackJoon_1806/)
 
-## 출처
+## 🎓 참고 출처
 
-<a href="https://www.youtube.com/watch?v=I_0aAKzu0m8&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY">[바킹독의 실전 알고리즘] 0x14강 - 투 포인터 </a>
+- 🎥 [바킹독의 실전 알고리즘 - 투 포인터](https://www.youtube.com/watch?v=I_0aAKzu0m8&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY)
+
+## ✅ 요약
+
+| 항목 | 수 고르기 (2230) | 부분합 (1806) |
+|------|------------------|----------------|
+| 목표 | 차이가 M 이상인 수들의 최소 차이 | 합이 S 이상인 부분 배열 길이 |
+| 방식 | 정렬 후 최소 차이 탐색 | 누적합 + 최소 길이 탐색 |
+| 시간복잡도 | O(N) | O(N) |
+
